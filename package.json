@@ -1,0 +1,28 @@
+{
+  "name": "yyl-server",
+  "version": "0.0.1",
+  "description": "proxy server for yyl",
+  "preferGlobal": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackness1208/yyl-server.git"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "keywords": [
+    "yyl",
+    "proxy",
+    "server"
+  ],
+  "author": "jackness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackness1208/yyl-server/issues"
+  },
+  "homepage": "https://github.com/jackness1208/yyl-server#readme"
+}
