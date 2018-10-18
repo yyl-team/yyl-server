@@ -4,6 +4,9 @@
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
+  "bin": {
+    "yys": "bin/init.js"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -24,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/jackness1208/yyl-server/issues"
   },
-  "homepage": "https://github.com/jackness1208/yyl-server#readme"
+  "homepage": "https://github.com/jackness1208/yyl-server#readme",
+  "dependencies": {
+    "yyl-fs": "^0.1.1",
+    "yyl-util": "^1.14.4"
+  }
 }
