@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const util = require('yyl-util');
-const iArgv = process.argv.splice(3);
+const iArgv = process.argv.splice(2);
 
 process.on('uncaughtException', (err) => {
   console.error('Uncaught exception:\n', err.stack);

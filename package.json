@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/jackness1208/yyl-server#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
     "yyl-fs": "^0.1.1",
     "yyl-util": "^1.14.4"
   }
