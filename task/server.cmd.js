@@ -9,7 +9,8 @@ const cmd = {
     const h = {
       usage: 'yys',
       commands: {
-        'start': 'start proxy server'
+        'start': 'start proxy server',
+        'abort': 'start proxy server'
       },
       options: {
         '-h, --help': 'print usage information',
@@ -34,8 +35,8 @@ const cmd = {
   async start(iEnv) {
     await main.start(iEnv);
   },
-  async stop(iEnv) {
-    await main.stop(iEnv);
+  async abort(iEnv) {
+    await main.abort(iEnv);
   }
 };
 

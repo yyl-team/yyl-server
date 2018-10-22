@@ -30,6 +30,12 @@
   "homepage": "https://github.com/jackness1208/yyl-server#readme",
   "dependencies": {
     "chalk": "^2.4.1",
+    "connect": "^3.6.6",
+    "connect-livereload": "^0.6.0",
+    "http-proxy": "^1.17.0",
+    "serve-index": "^1.9.1",
+    "serve-static": "^1.13.2",
+    "tiny-lr": "^1.1.1",
     "yyl-fs": "^0.1.1",
     "yyl-util": "^1.14.4"
   }

@@ -12,6 +12,10 @@ const entry = {
         await cmd.start(iEnv);
         break;
 
+      case 'abort':
+        await cmd.abort(iEnv);
+        break;
+
       default:
         await cmd.help(iEnv);
         break;
