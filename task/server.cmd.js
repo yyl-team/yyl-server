@@ -1,7 +1,10 @@
 const util = require('yyl-util');
 const chalk = require('chalk');
+
 const pkg = require('../package.json');
-const server = {
+const main = require('./server.main.js');
+
+const cmd = {
   help(iEnv) {
     const h = {
       usage: 'yys',
@@ -22,13 +25,18 @@ const server = {
     if (!iEnv || !iEnv.silent) {
       console.log([
         '',
-        ' +--------------------+',
-        ` |`
-        ' +--------------------+'
-      ].join('\n'))
-      console.log(`yys ${chalk.yellow(pkg.version)}`);
+        ` yys ${chalk.yellow(pkg.version)}`,
+        ''
+      ].join('\n'));
     }
     return Promise.resolve(pkg.version);
+  },
+  async start(iEnv) {
+    await main.start(iEnv);
+  },
+  async stop(iEnv) {
+    await main.stop(iEnv);
   }
 };
-module.exports = server;
+
+module.exports = cmd;
