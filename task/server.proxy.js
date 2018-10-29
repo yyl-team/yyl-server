@@ -17,21 +17,39 @@ const proxy = {
       throw `port ${chalk.yellow(op.port)} is occupied, please check`;
     }
 
-
     cache.proxy = httpProxy.createProxyServer({
       ws: true
     });
 
+    cache.proxy.on('proxyRes', (proxyRes, req, res) => {
+      if (res.shouldKeepAlive) {
+        proxyRes.headers.connection = 'keep-alive';
+      }
+    });
+
+    cache.proxy.on('error', (e) => {
+      console.log(JSON.stringify(e, null, ' '));
+    });
+
     cache.server = http.createServer((req, res) => {
       const iUrl = url.parse(req.url);
-      console.log(`${iUrl.protocol}//${iUrl.hostname}:${iUrl.port}`)
-      cache.proxy.web(req, res, { target: `${iUrl.protocol}//${iUrl.hostname}:${iUrl.port || 80}` });
+      console.log(`${iUrl.protocol}//${iUrl.hostname}:${iUrl.port}`);
+      cache.proxy.web(req, res, {
+        target: {
+          host: iUrl.hostname,
+          port: iUrl.port || 80,
+          protocol: iUrl.protocol
+        },
+        changeOrigin: true
+      });
       // TODO
     });
 
     cache.server.on('upgrade', (req, socket, head) => {
+      req.headers.connection = 'upgrade';
       cache.proxy.ws(req, socket, head);
     });
+
 
     log('success', 'proxy server start');
     Object.keys(op.localRemote).forEach((key) => {

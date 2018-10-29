@@ -1,4 +1,4 @@
-const util = require('yyl-util');
+const print = require('yyl-print');
 
 function log (type, argv) {
   let iArgv = [];
@@ -7,7 +7,7 @@ function log (type, argv) {
   } else {
     iArgv = argv;
   }
-  util.msg[type](...iArgv);
+  print.log[type](...iArgv);
 }
 
 module.exports = log;
