@@ -158,13 +158,12 @@ const main = {
     }
     if (!iPath) {
       log('info', 'config path is not exists, use default config');
-      return config;
-    }
-
-    try {
-      config = util.extend(true, config, require(iPath));
-    } catch (er) {
-      throw [`config parse error: ${iPath}`, er];
+    } else {
+      try {
+        config = util.extend(true, config, require(iPath));
+      } catch (er) {
+        throw [`config parse error: ${iPath}`, er];
+      }
     }
 
     config.localserver.address = `http://${LOCAL_IP}:${config.localserver.port}`;
