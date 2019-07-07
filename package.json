@@ -8,7 +8,8 @@
   "scripts": {
     "test": "jest test/jest/ --env=node",
     "c-base": "node ./test/runner.js --path ./test/case/base",
-    "c-mock": "node ./test/runner.js --path ./test/case/mock"
+    "c-mock": "node ./test/runner.js --path ./test/case/mock",
+    "c-proxy": "node ./test/runner.js --path ./test/case/proxy"
   },
   "repository": {
     "type": "git",

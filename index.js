@@ -1,6 +1,6 @@
-const server = require('./lib/server');
-const proxy = require('./lib/proxy');
+const Server = require('./lib/server');
+const Proxy = require('./lib/proxy');
 module.exports = {
-  Server: server,
-  proxy
+  Server,
+  Proxy
 };

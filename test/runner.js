@@ -2,17 +2,17 @@ const util = require('yyl-util');
 const path = require('path');
 const fs = require('fs');
 const print = require('yyl-print');
-const { Server } = require('../index');
+const { Server, Proxy } = require('../index');
 
 const log = (type, args) => {
   print.log[type](...args);
 };
 
-const runner = () => {
+const runner = async () => {
   const { env } = util.cmdParse(process.argv, {
     env: { silent: Boolean}
   });
-  const targetPath = path.resolve(process.cwd(), env.path);
+  const targetPath = path.join(process.cwd(), env.path);
   if (!fs.existsSync(targetPath)) {
     throw new Error(`path not exists, ${targetPath}`);
   }
@@ -34,7 +34,17 @@ const runner = () => {
     cwd: targetPath
   });
 
-  server.start();
+  await server.start();
+
+  if (config.proxy) {
+    const proxyServer = new Proxy({
+      log,
+      env,
+      config: config.proxy,
+      cwd: targetPath
+    });
+    await proxyServer.start();
+  }
 };
 
 runner();
