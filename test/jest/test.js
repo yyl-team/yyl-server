@@ -168,8 +168,9 @@ if (TEST_CTRL.CASE) {
       });
       await server.start();
 
+      let proxyServer;
       if (config.proxy) {
-        const proxyServer = new Proxy({
+        proxyServer = new Proxy({
           log,
           env,
           config: config.proxy
@@ -187,11 +188,13 @@ if (TEST_CTRL.CASE) {
         if (config.proxy) {
           param.proxy = `http://${extOs.LOCAL_IP}:${config.proxy.port}`;
         }
-        const [err, res] = await request(param);
-        console.log(err);
+        const [, res] = await request(param);
         expect(res.statusCode).toEqual(200);
       }
       await server.abort();
+      if (proxyServer) {
+        await proxyServer.abort();
+      }
     });
   });
 }
