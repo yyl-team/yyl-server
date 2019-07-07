@@ -1,26 +1,6 @@
-const cmd = require('./task/server.cmd.js');
-
-const entry = {
-  run: async (ctx, iEnv) => {
-    switch (ctx) {
-      case '-v':
-      case '--version':
-        await cmd.version(iEnv);
-        break;
-
-      case 'start':
-        await cmd.start(iEnv);
-        break;
-
-      case 'abort':
-        await cmd.abort(iEnv);
-        break;
-
-      default:
-        await cmd.help(iEnv);
-        break;
-    }
-  }
+const Server = require('./lib/server');
+const Proxy = require('./lib/proxy');
+module.exports = {
+  Server,
+  Proxy
 };
-
-module.exports = entry;
