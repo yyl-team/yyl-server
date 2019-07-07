@@ -27,17 +27,119 @@ if (TEST_CTRL.MOCK) {
     const { serverAddress } = server.config;
 
     const checkingArr = [{
-      href: `${serverAddress}/db`,
-      check({ res, data }) {
-        expect(res.statusCode).toEqual(200);
-        const iData = JSON.parse(data);
-        expect(typeof iData).toEqual('object');
+      href: '/db'
+    }, {
+      href: '/mockapi',
+      check({ data }) {
+        expect(data.length).not.toEqual(0);
+      }
+    }, {
+      href: '/mockapi/1'
+    }, {
+      href: '/mockapi?_sort=id',
+      check({ data }) {
+        expect(data[0].id).toEqual(1);
+      }
+    }, {
+      href: '/mockapi?_sort=id&_order=desc',
+      check({ data }) {
+        expect(data[0].id).toEqual(5);
+      }
+    }, {
+      href: '/mockapi?_start=1',
+      check({ data }) {
+        expect(data.length).toEqual(4);
+      }
+    }, {
+      href: '/mockapi?_end=3',
+      check({ data }) {
+        expect(data.length).toEqual(4);
+      }
+    }, {
+      href: '/mockapi?_limit=3',
+      check({ data }) {
+        expect(data.length).toEqual(3);
+      }
+    }, {
+      href: '/mockapi?_limit=-1',
+      check({ data }) {
+        expect(data.length).toEqual(0);
+      }
+    }, {
+      href: '/mockapi?_start=1&_end=3',
+      check({ data }) {
+        expect(data.length).toEqual(3);
+      }
+    }, {
+      href: '/mockapi?_start=1&_end=3&_limit=2',
+      check({ data }) {
+        expect(data.length).toEqual(2);
+      }
+    }, {
+      href: '/mockapi?id_gte=2',
+      check({ data }) {
+        expect(data.length).toEqual(4);
+      }
+    }, {
+      href: '/mockapi?id_lte=2',
+      check({ data }) {
+        expect(data.length).toEqual(2);
+      }
+    }, {
+      href: '/mockapi?id_ne=2',
+      check({ data }) {
+        expect(data.length).toEqual(4);
+      }
+    }, {
+      href: `/mockapi?title_like=${encodeURIComponent('又')}`,
+      check({ data }) {
+        expect(data.length).toEqual(1);
+      }
+    }, {
+      href: '/mockapi?uid=1369446333',
+      check({ data }) {
+        expect(data.length).toEqual(1);
+      }
+    }, {
+      href: '/justObject'
+    }, {
+      href: '/api',
+      check({ data }) {
+        expect(data.length).not.toEqual(0);
+      }
+    }, {
+      href: '/mapi/1'
+    }, {
+      href: '/mapi/1?callback=aa',
+      jsonp: 'aa',
+      check({ data }) {
+        expect(data.length).not.toEqual(0);
+      }
+    }, {
+      href: '/mapi/1?jsonp=bb&bb=aa',
+      jsonp: 'aa',
+      check({ data }) {
+        expect(data.length).not.toEqual(0);
       }
     }];
 
     await util.forEach(checkingArr, async(item) => {
-      const [, res, data] = await request(item.href);
-      item.check({res, data});
+      const url = `${serverAddress}${item.href}`;
+      const [, res, data] = await request(url);
+      expect(res.statusCode).toEqual(200);
+      let iData;
+      if (item.jsonp) {
+        const jsonpMatch = new RegExp(`^${item.jsonp}\\((.+)\\);$`);
+        const iMatch = data.match(jsonpMatch);
+        expect(iMatch).not.toEqual(null);
+        iData = JSON.parse(iMatch[1]);
+      } else {
+        iData = JSON.parse(data);
+      }
+      expect(typeof iData).toEqual('object');
+      if (item.check) {
+        item.check({ data: iData });
+      }
     });
 
     await server.abort();
