@@ -1,5 +1,5 @@
 module.exports = {
-  server: {
+  localserver: {
     root: './root'
   },
   proxy: false

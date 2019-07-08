@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/jackness1208/yyl-server#readme",
   "dependencies": {
-    "anyproxy": "^4.0.12",
+    "anyproxy": "^4.1.0",
     "chalk": "^2.4.1",
     "connect": "^3.6.6",
     "connect-livereload": "^0.6.0",

@@ -19,7 +19,7 @@ if (TEST_CTRL.MOCK) {
     const env = {};
 
     const server = new Server({
-      config: config.server,
+      config: config.localserver,
       log,
       env,
       cwd: pjPath
@@ -161,7 +161,7 @@ if (TEST_CTRL.CASE) {
       const env = {};
 
       const server = new Server({
-        config: config.server,
+        config: config.localserver,
         log,
         env,
         cwd: pjPath

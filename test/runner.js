@@ -30,7 +30,7 @@ const runner = async () => {
   const server = new Server({
     log,
     env,
-    config: config.server,
+    config: config.localserver,
     cwd: targetPath
   });
 

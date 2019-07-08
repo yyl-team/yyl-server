@@ -2,7 +2,7 @@ const PROJECT_NAME = '1';
 const PLATFORM = 'pc';
 const config = {
   homePage: 'http://www.yy.com/web/1/',
-  server: {
+  localserver: {
     port: 5000,
     root: './root'
   },
