@@ -24,7 +24,6 @@ if (TEST_CTRL.MOCK) {
       cwd: pjPath
     });
     await runner.start();
-    console.log(runner.config)
     const { serverAddress } = runner.config.localserver;
 
     const checkingArr = [{
