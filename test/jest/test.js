@@ -5,9 +5,19 @@ const CASE_PATH = path.join(__dirname, '../case');
 const util = require('yyl-util');
 const { Runner } = require('../../index');
 const TEST_CTRL = {
+  SERVER: true,
+  PROXY: true,
+  RUNNER: true,
+  CLEAN: true,
   MOCK: true,
   CASE: true
 };
+
+if (TEST_CTRL.CLEAN) {
+  test('Runner.clean()', async() => {
+    await Runner.clean();
+  });
+}
 
 if (TEST_CTRL.MOCK) {
   test('mock test', async() => {

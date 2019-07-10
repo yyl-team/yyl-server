@@ -37,24 +37,29 @@ declare class Server {
   start(): Promise<any>;
   abort(): Promise<any>;
   livereload(): Promise<any>;
+  config: IServerConfig;
+  app: any;
+  server: any;
+  lrServer: any;
 }
 
 declare class Proxy {
+  static clean(): Promise<any>;
   constructor({ log: Tlog, env: anyObj, config: IProxyConfig})
   start(): Promise<any>;
   abort(): Promise<any>;
-  clean(): Promise<any>;
 }
 
 declare class Runner {
+  static clean(): Promise<any>;
   constructor({ log: Tlog, env: anyObj, config: IYylConfig, cwd: string})
   start(): Promise<any>;
   abort(): Promise<any>;
-  clean(): Promise<any>;
   livereload(): Promise<any>;
 }
 
 export {
   Server,
-  Proxy
+  Proxy,
+  Runner
 }
