@@ -1,8 +1,18 @@
-import { start } from "repl";
-
 type Tlog = (type: string, args: any[]) => any;
 type anyObj = { [key:string]: any};
 type TonInitMiddleWare = (app: any, port: number) => any;
+
+interface ICommit {
+  hostname?: string;
+  staticHost?: string;
+  mainHost?: string;
+}
+
+interface IYylConfig {
+  localserver: IServerConfig,
+  proxy: IProxyConfig,
+  commit: ICommit
+}
 
 interface IServerConfig {
   port?: number;
@@ -34,6 +44,14 @@ declare class Proxy {
   start(): Promise<any>;
   abort(): Promise<any>;
   clean(): Promise<any>;
+}
+
+declare class Runner {
+  constructor({ log: Tlog, env: anyObj, config: IYylConfig, cwd: string})
+  start(): Promise<any>;
+  abort(): Promise<any>;
+  clean(): Promise<any>;
+  livereload(): Promise<any>;
 }
 
 export {
