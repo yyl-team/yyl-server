@@ -1,6 +1,6 @@
 {
   "name": "yyl-server",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
@@ -9,7 +9,7 @@
     "test": "jest test/jest/ --env=node",
     "c-base": "node ./test/cmd.js --path ./test/case/base/config.js",
     "c-mock": "node ./test/cmd.js --path ./test/case/mock/config.js",
-    "c-proxy": "node ./test/cmd.js --path ./test/case/proxy/config.js --https"
+    "c-proxy": "node ./test/cmd.js --path ./test/case/proxy/config.js"
   },
   "repository": {
     "type": "git",

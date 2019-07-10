@@ -1,4 +1,7 @@
 # 版本变更
+## 0.1.5 (2019-07-11)
+* [EDIT] 调整 proxy localRemote 匹配优先级
+
 ## 0.1.4 (2019-07-11)
 * [FIX] `new Proxy().start` bugfix
 * [ADD] 补充 test
