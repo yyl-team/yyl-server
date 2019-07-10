@@ -41,7 +41,7 @@
     "tiny-lr": "^1.1.1",
     "yyl-fs": "^0.1.1",
     "yyl-os": "^0.8.1",
-    "yyl-request": "^0.1.0",
+    "yyl-request": "^0.1.1",
     "yyl-util": "^2.3.3"
   },
   "devDependencies": {

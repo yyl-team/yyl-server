@@ -3,7 +3,7 @@ const path = require('path');
 const request = require('yyl-request');
 const CASE_PATH = path.join(__dirname, '../case');
 const util = require('yyl-util');
-const { Server, Proxy } = require('../../index');
+const { Server, Proxy, Runner } = require('../../index');
 const extOs = require('yyl-os');
 const TEST_CTRL = {
   MOCK: true,
@@ -156,45 +156,28 @@ if (TEST_CTRL.CASE) {
     test(`case test ${dirname}`, async() => {
       const pjPath = path.join(CASE_PATH, dirname);
       const configPath = path.join(pjPath, 'config.js');
-      const config = require(configPath);
+      let config = require(configPath);
       const log = () => undefined;
       const env = {};
 
-      const server = new Server({
+      const runner = new Runner({
         config: config.localserver,
         log,
         env,
         cwd: pjPath
       });
-      await server.start();
 
-      let proxyServer;
-      if (config.proxy) {
-        proxyServer = new Proxy({
-          log,
-          env,
-          config: config.proxy
-        });
-        await proxyServer.start();
-      }
+      await runner.start();
+      const { homePage } = runner;
 
-      if (config.homePage) {
+      if (homePage) {
         const param = {
-          url: config.homePage
+          url: homePage
         };
-        if (!path.isAbsolute(param.url) && !/^http/.test(param.url)) {
-          param.url = path.join(server.config.serverAddress, param.url);
-        }
-        if (config.proxy) {
-          param.proxy = `http://${extOs.LOCAL_IP}:${config.proxy.port}`;
-        }
         const [, res] = await request(param);
         expect(res.statusCode).toEqual(200);
       }
-      await server.abort();
-      if (proxyServer) {
-        await proxyServer.abort();
-      }
+      await runner.abort();
     });
   });
 }
