@@ -3,8 +3,7 @@ const path = require('path');
 const request = require('yyl-request');
 const CASE_PATH = path.join(__dirname, '../case');
 const util = require('yyl-util');
-const { Server, Proxy, Runner } = require('../../index');
-const extOs = require('yyl-os');
+const { Runner } = require('../../index');
 const TEST_CTRL = {
   MOCK: true,
   CASE: true
@@ -16,16 +15,17 @@ if (TEST_CTRL.MOCK) {
     const configPath = path.join(pjPath, 'config.js');
     const config = require(configPath);
     const log = () => undefined;
-    const env = {};
+    const env = { silent: true };
 
-    const server = new Server({
-      config: config.localserver,
+    const runner = new Runner({
+      config: config,
       log,
       env,
       cwd: pjPath
     });
-    await server.start();
-    const { serverAddress } = server.config;
+    await runner.start();
+    console.log(runner.config)
+    const { serverAddress } = runner.config.localserver;
 
     const checkingArr = [{
       href: '/db'
@@ -143,7 +143,7 @@ if (TEST_CTRL.MOCK) {
       }
     });
 
-    await server.abort();
+    await runner.abort();
   });
 }
 
