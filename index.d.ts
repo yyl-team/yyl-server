@@ -51,6 +51,7 @@ declare class Runner {
   start(): Promise<any>;
   abort(): Promise<any>;
   clean(): Promise<any>;
+  livereload(): Promise<any>;
 }
 
 export {
