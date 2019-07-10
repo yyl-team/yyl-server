@@ -1,4 +1,8 @@
 # 版本变更
+## 0.1.4 (2019-07-11)
+* [FIX] `new Proxy().start` bugfix
+* [ADD] 补充 test
+
 ## 0.1.3 (2019-07-10)
 * [ADD] 新增 `Runner.clean()` 方法
 * [ADD] 新增 `Proxy.clean()` 方法

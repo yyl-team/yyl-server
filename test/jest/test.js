@@ -3,7 +3,8 @@ const path = require('path');
 const request = require('yyl-request');
 const CASE_PATH = path.join(__dirname, '../case');
 const util = require('yyl-util');
-const { Runner } = require('../../index');
+const { Server, Runner, Proxy } = require('../../index');
+const extOs = require('yyl-os');
 const TEST_CTRL = {
   SERVER: true,
   PROXY: true,
@@ -12,6 +13,63 @@ const TEST_CTRL = {
   MOCK: true,
   CASE: true
 };
+
+if (TEST_CTRL.SERVER) {
+  test('Server usage', async() => {
+    const pjPath = path.join(CASE_PATH, 'base');
+    const configPath = path.join(pjPath, 'config.js');
+    const config = require(configPath);
+    const log = () => undefined;
+    const env = { silent: true };
+
+    const server = new Server({
+      config: config.localserver,
+      log,
+      env,
+      cwd: pjPath
+    });
+    await server.start();
+    const localserver = server.config;
+    const url = `${localserver.serverAddress}/html/`;
+    const [, res] = await request(url);
+    expect(res.statusCode).toEqual(200);
+    await server.abort();
+  });
+}
+if (TEST_CTRL.PROXY) {
+  test('Proxy usage', async() => {
+    const pjPath = path.join(CASE_PATH, 'proxy');
+    const configPath = path.join(pjPath, 'config.js');
+    const config = require(configPath);
+    const log = () => undefined;
+    const env = { silent: true };
+
+    const server = new Server({
+      config: config.localserver,
+      log,
+      env,
+      cwd: pjPath
+    });
+    await server.start();
+
+    const proxy = new Proxy({
+      config: config.proxy,
+      log,
+      env,
+      cwd: pjPath
+    });
+    await proxy.start();
+    const url = proxy.config.homePage;
+    const [, res] = await request({
+      url,
+      proxy: `http://${extOs.LOCAL_IP}:${proxy.config.port}`
+    });
+    expect(res.statusCode).toEqual(200);
+    await util.waitFor(1000);
+    await server.abort();
+    await proxy.abort();
+  });
+}
 
 if (TEST_CTRL.CLEAN) {
   test('Runner.clean()', async() => {
