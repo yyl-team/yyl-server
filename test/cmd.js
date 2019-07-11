@@ -4,6 +4,7 @@ const print = require('yyl-print');
 const Hander = require('yyl-hander');
 const fs = require('fs');
 const path = require('path');
+const extOs = require('yyl-os');
 const cmder = async function () {
   const { env } = util.cmdParse(process.argv, {
     env: {
@@ -43,7 +44,10 @@ const cmder = async function () {
     cwd: path.dirname(configPath)
   });
 
-  runner.start();
+  await runner.start();
+  if (!env.silent) {
+    extOs.openBrowser(runner.homePage);
+  }
 };
 
 cmder().then(() => {
