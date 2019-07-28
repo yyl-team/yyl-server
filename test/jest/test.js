@@ -35,6 +35,31 @@ if (TEST_CTRL.SERVER) {
     expect(res.statusCode).toEqual(200);
     await server.abort();
   });
+
+  test('Server --config usage', async () => {
+    const pjPath = path.join(CASE_PATH, 'config');
+    const configPath = path.join(pjPath, 'config.js');
+    const cwd = process.cwd();
+    const config = require(configPath);
+    const log = () => undefined;
+    const env = { silent: true };
+
+    console.log(path.relative(cwd, pjPath))
+
+    const server = new Server({
+      config: config.localserver,
+      log,
+      env,
+      cwd: path.relative(cwd, pjPath)
+    });
+
+    await server.start();
+    const localserver = server.config;
+    const url = `${localserver.serverAddress}/project/test/pc/html/`;
+    const [, res] = await request(url);
+    expect(res.statusCode).toEqual(200);
+    await server.abort();
+  });
 }
 if (TEST_CTRL.PROXY) {
   test('Proxy usage', async() => {
