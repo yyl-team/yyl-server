@@ -1,4 +1,7 @@
 # 版本变更
+## 0.1.7 (2019-08-07)
+* [EDIT] `proxy` `webPort` 从固定 `5001` 改为 跟随 `config.port` => `${config.port}1`
+
 ## 0.1.6 (2019-07-28)
 * [FIX] 修复 new Server({cwd}) 传入 相对路径时 会出现报错的问题
 
