@@ -11,6 +11,7 @@ const cmder = async function () {
       silent: Boolean
     }
   });
+
   const hander = new Hander({log: function(type, status, args) {
     if (type === 'msg') {
       let type = 'info';
@@ -20,16 +21,30 @@ const cmder = async function () {
       print.log[type](...args);
     }
   }});
+  
   if (!env.path) {
     throw new Error('--path is not set');
   }
   const configPath = path.resolve(process.cwd(), env.path);
+
+  hander.setVars({
+    PROJECT_PATH: path.dirname(configPath)
+  });
+
   if (!fs.existsSync(configPath)) {
     throw new Error(`--path is not exists: ${configPath}`);
   }
   delete env.path;
 
   const config = await hander.parseConfig(configPath, env, ['localserver', 'commit', 'proxy']);
+  const cwd = path.dirname(configPath);
+
+  const pkgPath = path.join(cwd, 'package.json');
+
+  if (fs.existsSync(pkgPath)) {
+    await extOs.runCMD('npm install', cwd);
+  }
+
 
   const runner = new Runner({
     config,
@@ -41,8 +56,9 @@ const cmder = async function () {
       }
       print.log[iType](...args);
     },
-    cwd: path.dirname(configPath)
+    cwd
   });
+
 
   await runner.start();
   if (!env.silent) {
