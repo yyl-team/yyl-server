@@ -1,6 +1,6 @@
 {
   "name": "yyl-server",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
