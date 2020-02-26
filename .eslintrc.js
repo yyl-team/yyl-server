@@ -2,7 +2,7 @@ module.exports = {
     "env": {
       "node": true,
     	"amd": true,
-      "jest": true
+      "mocha": true
     },
     "globals": {
       "__data": true
