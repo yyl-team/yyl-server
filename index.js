@@ -1,8 +1,3 @@
-const Server = require('./lib/server');
-const Proxy = require('./lib/proxy');
-const Runner = require('./lib/runner');
-module.exports = {
-  Server,
-  Proxy,
-  Runner
-};
+exports.Server = require('./lib/server');
+exports.Proxy = require('./lib/proxy');
+exports.Runner = require('./lib/runner');

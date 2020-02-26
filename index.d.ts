@@ -1,60 +1,98 @@
 type Tlog = (type: string, args: any[]) => any;
 type anyObj = { [key:string]: any};
-type TonInitMiddleWare = (app: any, port: number) => any;
 
-interface ICommit {
+interface Commit {
   hostname?: string;
+  /** 静态资源域名，若没有则会取 hostname */
   staticHost?: string;
+  /** html域名，若没有则会取 hostname */
   mainHost?: string;
 }
 
-interface IYylConfig {
-  localserver: IServerConfig,
-  proxy: IProxyConfig,
-  commit: ICommit
-}
 
-interface IServerConfig {
+
+interface ServerConfig {
+  /** 端口 */
   port?: number;
+  /** 映射目录 */
   root?: string;
+  /** 热更新 port */
   lrPort?: number;
+  /** 是否执行livereload */
   livereload?: boolean;
+  /** 服务地址 */
   serverAddress?: string,
-  onInitMiddleWare?: TonInitMiddleWare,
+  /** app (express or connect) 初始化完后回调方法 */
+  onInitMiddleWare?: (app: any, port: number) => Promise<any>,
+  /** app (express or connect) 初始化之前回调方法 */
+  onWillInitMiddleWare?: (app: any, port: number) => Promise<any>,
+  /** mock 根目录 */
   mockRoot?: string;
 }
 
-interface IProxyConfig {
+interface ProxyConfig {
+  /** 代理端口 */
   port?: number;
+  /** 映射表 */
   localRemote?: anyObj,
+  /** 是否执行 https */
   https?: boolean,
+  /** 主页 */
   homePage?: string,
+  /** 跳过规则 */
   ignores?: string[]
 }
 
+/** yy.config.js 中用到的配置项 */
+interface YylConfig {
+  /** 本地服务 配置 */
+  localserver: ServerConfig,
+  /** 代理服务 配置 */
+  proxy: ProxyConfig,
+  /** 远程配置 */
+  commit: Commit
+}
+
+/** server 相关 */
 declare class Server {
-  constructor({ log: Tlog, env: anyObj, config: IServerConfig, cwd: string})
+  constructor({ log: Tlog, env: anyObj, config: ServerConfig, cwd: string})
+  /** 启动 */
   start(): Promise<any>;
+  /** 停止 - 一般用于 unit-test */
   abort(): Promise<any>;
+  /** 主动热更新 */
   livereload(): Promise<any>;
-  config: IServerConfig;
+  /** 初始化后的配置 */
+  config: ServerConfig;
+  /** express or connect 对象 */
   app: any;
+  /** server 对象 */
   server: any;
+  /** 热更新服务对象 */
   lrServer: any;
 }
 
+/** 代理相关 */
 declare class Proxy {
+  constructor({ log: Tlog, env: anyObj, config: ProxyConfig})
+  /** 清除 本地缓存 */
   static clean(): Promise<any>;
-  constructor({ log: Tlog, env: anyObj, config: IProxyConfig})
+  /** 启动 */
   start(): Promise<any>;
+  /** 停止 */
   abort(): Promise<any>;
 }
 
+/** 执行者 包含 server & proxy */
 declare class Runner {
+  /** 清除 本地缓存 */
   static clean(): Promise<any>;
-  constructor({ log: Tlog, env: anyObj, config: IYylConfig, cwd: string})
+  constructor({ log: Tlog, env: anyObj, config: YylConfig, cwd: string})
+  /** 启动 */
   start(): Promise<any>;
+  /** 停止 */
   abort(): Promise<any>;
+  /** 触发热更新 */
   livereload(): Promise<any>;
 }
 
