@@ -13,11 +13,22 @@ exports.handleCase = function (dirname) {
       const log = () => undefined;
       const env = {};
 
+      const mountArr = [];
       const runner = new Runner({
-        config: config.localserver,
+        config,
         log,
         env,
-        cwd: pjPath
+        cwd: pjPath,
+        serverOption: {
+          appWillMount() {
+            mountArr.push('will');
+            return Promise.resolve();
+          },
+          appDidMount() {
+            mountArr.push('did');
+            return Promise.resolve();
+          }
+        }
       });
 
       await runner.start();
@@ -28,8 +39,9 @@ exports.handleCase = function (dirname) {
           url: homePage
         };
         const [, res] = await request(param);
-        expect(res.statusCode).toEqual(200);
+        expect(res.statusCode).to.equal(200);
       }
+      expect(mountArr).to.deep.equal(['will', 'did']);
       await runner.abort();
     });
   });

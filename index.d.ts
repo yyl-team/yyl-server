@@ -56,8 +56,8 @@ interface YylConfig {
 
 interface ServerOption {
   /** connect 对象绑定 第三方 */
-  appWillMounted?: (app: App) => Promise<any>
-  appDidMounted?: (app: App) => Promise<any>
+  appWillMount?: (app: App) => Promise<any>
+  appDidMount?: (app: App) => Promise<any>
 }
 
 /** server 相关 */

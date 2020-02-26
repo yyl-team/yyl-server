@@ -12,17 +12,29 @@ describe('Server test', () => {
     const log = () => undefined;
     const env = { silent: true };
 
+    const mountArr = [];
     const server = new Server({
       config: config.localserver,
       log,
       env,
-      cwd: pjPath
+      cwd: pjPath,
+      option: {
+        appWillMount() {
+          mountArr.push('will');
+          return Promise.resolve();
+        },
+        appDidMount() {
+          mountArr.push('did');
+          return Promise.resolve();
+        }
+      }
     });
     await server.start();
     const localserver = server.config;
     const url = `${localserver.serverAddress}/html/`;
     const [, res] = await request(url);
     expect([url, res.statusCode]).to.deep.equal([url, 200]);
+    expect(mountArr).to.deep.equal(['will', 'did']);
     await server.abort();
   });
 
