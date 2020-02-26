@@ -1,7 +1,13 @@
 # 版本变更
+## 0.3.1 (*)
+* feat: 新增 `Server(option)` 参数
+* del: 去掉 `config.onWillInitMiddleWare` 方法
+* del: 去掉 `config.onInitMiddleWare` 方法
+
 ## 0.3.0 (2020-02-26)
 * feat: 新增 `config.onWillInitMiddleWare` 接口
 * feat: 调整 types 
+
 ## 0.2.0 (2019-09-12)
 * feat: 新增 config.server.entry 参数，允许跳过 yyl-server 自带服务，直接用项目内自带的 server
 

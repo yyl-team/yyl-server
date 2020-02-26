@@ -5,8 +5,13 @@ npm i yyl-server --save-dev
 ```
 ## api
 ```typescript
-type Tlog = (type: string, args: any[]) => any;
-type anyObj = { [key:string]: any};
+/// <reference types="@types/connect" />
+
+import createServer = require("connect");
+
+type Log = (type: string, args: any[]) => any;
+type AnyObj = { [key:string]: any};
+type App = createServer.Server
 
 interface Commit {
   hostname?: string;
@@ -29,10 +34,6 @@ interface ServerConfig {
   livereload?: boolean;
   /** 服务地址 */
   serverAddress?: string,
-  /** app (express or connect) 初始化完后回调方法 */
-  onInitMiddleWare?: (app: any, port: number) => Promise<any>,
-  /** app (express or connect) 初始化之前回调方法 */
-  onWillInitMiddleWare?: (app: any, port: number) => Promise<any>,
   /** mock 根目录 */
   mockRoot?: string;
 }
@@ -60,9 +61,15 @@ interface YylConfig {
   commit: Commit
 }
 
+interface ServerOption {
+  /** connect 对象绑定 第三方 */
+  appWillMounted?: (app: App) => Promise<any>
+  appDidMounted?: (app: App) => Promise<any>
+}
+
 /** server 相关 */
 declare class Server {
-  constructor({ log: Tlog, env: anyObj, config: ServerConfig, cwd: string})
+  constructor({ log: Tlog, env: anyObj, config: ServerConfig, cwd: string, option: ServerOption })
   /** 启动 */
   start(): Promise<any>;
   /** 停止 - 一般用于 unit-test */
@@ -72,16 +79,17 @@ declare class Server {
   /** 初始化后的配置 */
   config: ServerConfig;
   /** express or connect 对象 */
-  app: any;
+  app: App;
   /** server 对象 */
   server: any;
   /** 热更新服务对象 */
   lrServer: any;
+  option: ServerOption;
 }
 
 /** 代理相关 */
 declare class Proxy {
-  constructor({ log: Tlog, env: anyObj, config: ProxyConfig})
+  constructor({ log: Tlog, env: AnyObj, config: ProxyConfig})
   /** 清除 本地缓存 */
   static clean(): Promise<any>;
   /** 启动 */
@@ -94,7 +102,7 @@ declare class Proxy {
 declare class Runner {
   /** 清除 本地缓存 */
   static clean(): Promise<any>;
-  constructor({ log: Tlog, env: anyObj, config: YylConfig, cwd: string})
+  constructor({ log: Log, env: AnyObj, config: YylConfig, cwd: string, serverOption: ServerOption })
   /** 启动 */
   start(): Promise<any>;
   /** 停止 */
