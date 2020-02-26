@@ -1,12 +1,12 @@
+const path = require('path');
 const CASE_PATH = path.join(__dirname, '../case');
 const { Server } = require('../../index');
-const { expect } = require('chai');
 const request = require('yyl-request');
-const path = require('path');
+const { expect } = require('chai');
 
 describe('Server test', () => {
   it('usage', async () => {
-    const pjPath = path.join(CASE_PATH, 'config');
+    const pjPath = path.join(CASE_PATH, 'base');
     const configPath = path.join(pjPath, 'config.js');
     const config = require(configPath);
     const log = () => undefined;
@@ -22,7 +22,7 @@ describe('Server test', () => {
     const localserver = server.config;
     const url = `${localserver.serverAddress}/html/`;
     const [, res] = await request(url);
-    expect(res.statusCode).to.equal(200);
+    expect([url, res.statusCode]).to.deep.equal([url, 200]);
     await server.abort();
   });
 

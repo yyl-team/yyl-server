@@ -13,10 +13,10 @@
     "test:mock": "mocha test/mocha/mock.test.js --timeout 100000",
     "test:proxy": "mocha test/mocha/proxy.test.js --timeout 100000",
     "test:server": "mocha test/mocha/server.test.js --timeout 100000",
-    "c-base": "node ./test/cmd.js --path ./test/case/base/config.js",
-    "c-mock": "node ./test/cmd.js --path ./test/case/mock/config.js",
-    "c-proxy": "node ./test/cmd.js --path ./test/case/proxy/config.js",
-    "c-pj-server": "node ./test/cmd.js --path ./test/case/pj-server/config.js"
+    "cb": "node ./test/cmd.js --path ./test/case/base/config.js",
+    "cm": "node ./test/cmd.js --path ./test/case/mock/config.js",
+    "cp": "node ./test/cmd.js --path ./test/case/proxy/config.js",
+    "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js"
   },
   "repository": {
     "type": "git",
