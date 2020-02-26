@@ -1,8 +1,7 @@
 # 版本变更
-## 0.3.1 (*)
+## 0.3.2 (2020-02-26)
 * feat: 新增 `Server(option)` 参数
 * del: 去掉 `config.onWillInitMiddleWare` 方法
-* del: 去掉 `config.onInitMiddleWare` 方法
 
 ## 0.3.0 (2020-02-26)
 * feat: 新增 `config.onWillInitMiddleWare` 接口

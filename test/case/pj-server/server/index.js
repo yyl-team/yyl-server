@@ -10,6 +10,10 @@ app.use('/', express.static(
   path.join(__dirname, '../dist/html')
 ));
 
-app.listen(config.port);
+const server = app.listen(config.port);
+
+app.close = () => {
+  server.close();
+};
 
 module.exports = app;

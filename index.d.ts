@@ -29,6 +29,8 @@ interface ServerConfig {
   serverAddress?: string,
   /** mock 根目录 */
   mockRoot?: string;
+  /** 中间件钩子 */
+  onInitMiddleWare?: (app: any, port: number) => Promise<any>
 }
 
 interface ProxyConfig {
