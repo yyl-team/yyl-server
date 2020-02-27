@@ -1,16 +1,22 @@
 {
   "name": "yyl-server",
-  "version": "0.2.1",
+  "version": "0.3.2",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
   "types": "index.d.ts",
   "scripts": {
-    "test": "jest test/jest/ --env=node",
-    "c-base": "node ./test/cmd.js --path ./test/case/base/config.js",
-    "c-mock": "node ./test/cmd.js --path ./test/case/mock/config.js",
-    "c-proxy": "node ./test/cmd.js --path ./test/case/proxy/config.js",
-    "c-pj-server": "node ./test/cmd.js --path ./test/case/pj-server/config.js"
+    "test": "mocha test/mocha/ --timeout 100000",
+    "test:case.base": "mocha test/mocha/case.base.test.js --timeout 100000",
+    "test:case.pj-server": "mocha test/mocha/case.pj-server.test.js --timeout 100000",
+    "test:clean": "mocha test/mocha/clean.test.js --timeout 100000",
+    "test:mock": "mocha test/mocha/mock.test.js --timeout 100000",
+    "test:proxy": "mocha test/mocha/proxy.test.js --timeout 100000",
+    "test:server": "mocha test/mocha/server.test.js --timeout 100000",
+    "cb": "node ./test/cmd.js --path ./test/case/base/config.js",
+    "cm": "node ./test/cmd.js --path ./test/case/mock/config.js",
+    "cp": "node ./test/cmd.js --path ./test/case/proxy/config.js",
+    "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +37,8 @@
   },
   "homepage": "https://github.com/jackness1208/yyl-server#readme",
   "dependencies": {
-    "anyproxy": "^4.1.2",
+    "@types/connect": "^3.4.33",
+    "anyproxy": "^4.1.0",
     "chalk": "^2.4.1",
     "connect": "^3.6.6",
     "connect-livereload": "^0.6.0",
@@ -46,7 +53,10 @@
     "yyl-util": "^2.3.3"
   },
   "devDependencies": {
-    "jest": "^25.1.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^11.0.0",
+    "mocha": "^7.0.1",
     "yyl-hander": "^0.3.2",
     "yyl-print": "^0.7.3"
   }
