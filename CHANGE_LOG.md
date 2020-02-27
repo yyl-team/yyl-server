@@ -1,4 +1,7 @@
 # 版本变更
+## 0.3.3 (2020-02-27)
+* feat: 新增 `ignoreServer` 参数
+
 ## 0.3.2 (2020-02-26)
 * feat: 新增 `Server(option)` 参数
 * del: 去掉 `config.onWillInitMiddleWare` 方法
