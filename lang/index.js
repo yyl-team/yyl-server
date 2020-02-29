@@ -25,8 +25,8 @@ const LANG = {
     CLEAN_CACHE_FINISHED: '清除 本地代理缓存 完成',
     CLEAN_CACHE_FINISHED_EMPTY: '清除 本地代理缓存完成，缓存目录不存在',
 
-    START_BEGIN: '启动 本地反向代理',
-    START_FINISHED: '启动 本地反向代理 完成',
+    START_BEGIN: '启动 anyproxy',
+    START_FINISHED: '启动 anyproxy 完成',
     USE_HTTPS: '使用 https',
     GENERATE_ROOT_CA_FINISHED: '本地证书创建 完成',
     CA_PATH: 'CA证书 目录',
