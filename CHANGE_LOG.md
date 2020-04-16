@@ -1,5 +1,5 @@
 # 版本变更
-## 0.3.7 (*)
+## 0.3.7 (2020-04-16)
 * feat: 调整开发配置
 * feat: 当配置 env.port 时， 自动替换 proxy 中的默认 5000 端口
 * fix: 修复 env.proxy === false 时 依然会启动 proxy

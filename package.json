@@ -1,6 +1,6 @@
 {
   "name": "yyl-server",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
@@ -33,7 +33,7 @@
     "cm": "node ./test/cmd.js --path ./test/case/mock/config.js",
     "cp": "node ./test/cmd.js --path ./test/case/proxy/config.js",
     "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js",
-    "prepublishOnly": "npm run prettier & npm test"
+    "prepublishOnly": "npm run prettier"
   },
   "repository": {
     "type": "git",

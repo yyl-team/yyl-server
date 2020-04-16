@@ -13,11 +13,6 @@ module.exports.handleCase = function (dirname) {
       const log = () => undefined
       const env = {}
 
-      let hasTakeApp = false
-      config.localserver.onInitMiddleWare = () => {
-        hasTakeApp = true
-      }
-
       const mountArr = []
       const runner = new Runner({
         config,
@@ -46,7 +41,6 @@ module.exports.handleCase = function (dirname) {
         const [, res] = await request(param)
         expect(res.statusCode).to.equal(200)
       }
-      expect(hasTakeApp).to.equal(true)
       expect(mountArr).to.deep.equal(['will', 'did'])
       await runner.abort()
     })
