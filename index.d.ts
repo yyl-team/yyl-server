@@ -29,8 +29,6 @@ interface ServerConfig {
   serverAddress?: string,
   /** mock 根目录 */
   mockRoot?: string;
-  /** 中间件钩子 */
-  onInitMiddleWare?: (app: any, port: number) => Promise<any>
 }
 
 interface ProxyConfig {
@@ -80,6 +78,10 @@ declare class Server {
   /** 热更新服务对象 */
   lrServer: any;
   option: ServerOption;
+  /** connect 对象绑定 第三方 */
+  appWillMount?: (app: App) => Promise<any>;
+  /** connect 对象绑定 第三方 */
+  appDidMount?: (app: App) => Promise<any>;
 }
 
 /** 代理相关 */

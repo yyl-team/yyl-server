@@ -1,11 +1,27 @@
 {
   "name": "yyl-server",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
   "types": "index.d.ts",
+  "eslintConfig": {
+    "extends": ["yyl-node"]
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "test/case"
+  ],
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "jsxSingleQuote": true,
+    "endOfLine": "lf",
+    "trailingComma": "none"
+  },
   "scripts": {
+    "eslint": "eslint ./",
+    "prettier": "prettier --write ./**/*.js",
     "test": "mocha test/mocha/ --timeout 100000",
     "test:case.base": "mocha test/mocha/case.base.test.js --timeout 100000",
     "test:case.pj-server": "mocha test/mocha/case.pj-server.test.js --timeout 100000",
@@ -16,7 +32,8 @@
     "cb": "node ./test/cmd.js --path ./test/case/base/config.js",
     "cm": "node ./test/cmd.js --path ./test/case/mock/config.js",
     "cp": "node ./test/cmd.js --path ./test/case/proxy/config.js",
-    "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js"
+    "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js",
+    "prepublishOnly": "npm run prettier"
   },
   "repository": {
     "type": "git",
@@ -55,8 +72,9 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-node": "^11.0.0",
+    "eslint-config-yyl-node": "^0.1.2",
     "mocha": "^7.0.1",
+    "prettier": "^2.0.4",
     "yyl-hander": "^0.3.2",
     "yyl-print": "^0.7.3"
   }
