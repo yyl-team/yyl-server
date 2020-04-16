@@ -1,20 +1,20 @@
-const path = require('path');
-const CASE_PATH = path.join(__dirname, '../case');
-const { Runner } = require('../../index');
-const { expect } = require('chai');
-const request = require('yyl-request');
+const path = require('path')
+const CASE_PATH = path.join(__dirname, '../case')
+const { Runner } = require('../../index')
+const { expect } = require('chai')
+const request = require('yyl-request')
 
-const dirname = 'pj-server';
+const dirname = 'pj-server'
 
 describe(`case ${dirname} test`, () => {
-  it('usage', async() => {
-    const pjPath = path.join(CASE_PATH, dirname);
-    const configPath = path.join(pjPath, 'config.js');
-    let config = require(configPath);
-    const log = () => undefined;
-    const env = {};
+  it('usage', async () => {
+    const pjPath = path.join(CASE_PATH, dirname)
+    const configPath = path.join(pjPath, 'config.js')
+    let config = require(configPath)
+    const log = () => undefined
+    const env = {}
 
-    const mountArr = [];
+    const mountArr = []
     const runner = new Runner({
       config,
       log,
@@ -22,27 +22,27 @@ describe(`case ${dirname} test`, () => {
       cwd: pjPath,
       serverOption: {
         appWillMount() {
-          mountArr.push('will');
-          return Promise.resolve();
+          mountArr.push('will')
+          return Promise.resolve()
         },
         appDidMount() {
-          mountArr.push('did');
-          return Promise.resolve();
+          mountArr.push('did')
+          return Promise.resolve()
         }
       }
-    });
+    })
 
-    await runner.start();
-    const { homePage } = runner;
+    await runner.start()
+    const { homePage } = runner
 
     if (homePage) {
       const param = {
         url: homePage
-      };
-      const [, res] = await request(param);
-      expect(res.statusCode).to.equal(200);
+      }
+      const [, res] = await request(param)
+      expect(res.statusCode).to.equal(200)
     }
-    expect(mountArr).to.deep.equal(['did']);
-    await runner.abort();
-  });
-});
+    expect(mountArr).to.deep.equal(['did'])
+    await runner.abort()
+  })
+})

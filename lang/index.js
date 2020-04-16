@@ -33,13 +33,13 @@ const LANG = {
     GENERATE_ROOT_CA_ERROR: '本地证书创建发生 错误'
   },
   INFO: {
-    SERVER_PATH:      'server path      ',
-    SERVER_ADDRESS:   'server address   ',
-    SERVER_LR_PORT:   'server lr port   ',
+    SERVER_PATH: 'server path      ',
+    SERVER_ADDRESS: 'server address   ',
+    SERVER_LR_PORT: 'server lr port   ',
     PROXY_UI_ADDRESS: 'proxy ui address ',
-    PROXY_PORT:       'proxy server port',
-    PROXY_MAP:        'proxy map        '
+    PROXY_PORT: 'proxy server port',
+    PROXY_MAP: 'proxy map        '
   }
-};
+}
 
-module.exports = LANG;
+module.exports = LANG
