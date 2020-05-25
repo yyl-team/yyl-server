@@ -35,7 +35,7 @@ const LANG = {
     USE_HTTPS: '使用 https',
     GENERATE_ROOT_CA_FINISHED: '本地证书创建 完成',
     CA_PATH: 'CA证书 目录',
-    GENERATE_ROOT_CA_ERROR: '本地证书创建发生 错误',
+    GENERATE_ROOT_CA_ERROR: '本地证书创建发生 错误'
   },
   INFO: {
     SERVER_PATH: 'server path      ',
