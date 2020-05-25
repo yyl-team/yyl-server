@@ -1,4 +1,9 @@
 # 版本变更
+## 0.3.9 (2020-05-25)
+* feat: upgrade `node-easy-cert@1.3.3`
+* feat: 补充 `server clear` 新增 `cert` clean
+* fix: 修复 anyproxy 在新版 osx 下 https 代理不了问题
+
 ## 0.3.8 (2020-04-16)
 * fix: 修复 env.port 在 dev-server 启动时不生效的bug
 
