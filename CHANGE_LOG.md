@@ -1,4 +1,7 @@
 # 版本变更
+## 0.3.12 (2020-08-28)
+* fix: 修复 `yyl server` 读取 `config.localserver.entry` 时 出错时 错误信息显示不全问题
+
 ## 0.3.11 (2020-08-26)
 * fix: 修复 `yyl server --port false` 时 会出现 proxy map port undefined 问题
 ## 0.3.10 (2020-07-08)
@@ -39,7 +42,7 @@
 * feat: 调整 types 
 
 ## 0.2.0 (2019-09-12)
-* feat: 新增 config.server.entry 参数，允许跳过 yyl-server 自带服务，直接用项目内自带的 server
+* feat: 新增 `config.server.entry` 参数，允许跳过 yyl-server 自带服务，直接用项目内自带的 server
 
 ## 0.1.8 (2019-08-07)
 * fix: `proxy` `webPort` 从固定 `5001` 改为 跟随 `config.port` => `${config.port - 1}`
