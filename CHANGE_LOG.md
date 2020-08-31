@@ -1,4 +1,6 @@
 # 版本变更
+## 0.3.13 (2020-08-31)
+* fix: 兼容 `yyl server` 读取 `config.localserver.entry` 时, `options.appWillMount` 不会执行问题
 ## 0.3.12 (2020-08-28)
 * fix: 修复 `yyl server` 读取 `config.localserver.entry` 时 出错时 错误信息显示不全问题
 
