@@ -1,4 +1,6 @@
 # 版本变更
+## 0.3.15 (2020-09-23)
+* feat: 当 `config.commit.hostname === '/'` 时，不会去进行 localRemote proxy
 ## 0.3.14 (2020-09-22)
 * fix: 兼容 localserver 为空情况
 ## 0.3.13 (2020-08-31)
