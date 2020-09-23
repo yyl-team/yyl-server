@@ -1,4 +1,6 @@
 # 版本变更
+## 0.3.16 (2020-09-23)
+* feat: 更新 `node-easy-cert@1.3.3`
 ## 0.3.15 (2020-09-23)
 * feat: 当 `config.commit.hostname === '/'` 时，不会去进行 localRemote proxy
 ## 0.3.14 (2020-09-22)
