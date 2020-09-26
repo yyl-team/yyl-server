@@ -1,4 +1,6 @@
 # 版本变更
+## 0.3.17 (2020-09-27)
+* fix: 修复 当 `config.commit.hostname === '//www.yy.com/pc'` 这种带有 pathname 的 配置时， `localserver` 映射不正确问题
 ## 0.3.16 (2020-09-23)
 * feat: 更新 `node-easy-cert@1.3.3`
 ## 0.3.15 (2020-09-23)
