@@ -1,6 +1,6 @@
 {
   "name": "yyl-server",
-  "version": "0.3.17",
+  "version": "0.3.18",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
@@ -67,6 +67,7 @@
     "serve-index": "1.9.1",
     "serve-static": "1.13.2",
     "tiny-lr": "1.1.1",
+    "yyl-config-types": "^0.2.0",
     "yyl-fs": "0.3.3",
     "yyl-os": "0.10.3",
     "yyl-request": "0.1.1",
