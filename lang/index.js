@@ -5,6 +5,7 @@ const LANG = {
   SERVER: {
     START_BEGIN: '启动 本地服务',
     START_FINISHED: '启动 本地服务 完成',
+    START_ERROR: '启动 本地服务失败',
 
     ABORT_BEGIN: '终止 本地服务 开始',
     ABORT_FINISHED: '终止 本地服务 完成',
