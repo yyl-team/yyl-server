@@ -1,6 +1,6 @@
 {
   "name": "yyl-server",
-  "version": "0.3.19",
+  "version": "0.3.20",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
@@ -35,6 +35,7 @@
     "cm": "node ./test/cmd.js --path ./test/case/mock/config.js",
     "cp": "node ./test/cmd.js --path ./test/case/proxy/config.js --proxy --https",
     "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js",
+    "cc": "node ./test/cmd.js --path ./test/case/proxy-cookies/config.js --proxy",
     "prepublishOnly": "npm run prettier"
   },
   "repository": {
