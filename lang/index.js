@@ -31,6 +31,8 @@ const LANG = {
 
     CERT_REINSTALL: '请重新安装证书',
 
+    REQUEST_ERROR: '请求发生错误',
+
     START_BEGIN: '启动 anyproxy',
     START_FINISHED: '启动 anyproxy 完成',
     USE_HTTPS: '使用 https',

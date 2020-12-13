@@ -1,5 +1,7 @@
 const http = require('http')
-http.createServer((req, res) => {
+const app = http.createServer((req, res) => {
   res.writeHead(200, {'Context-Type': 'text/plain'})
   res.end(`the cookies:[${req.headers.cookie}]`)
-}).listen(5000)
+})
+app.listen(5000)
+module.exports = app
