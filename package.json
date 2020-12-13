@@ -1,11 +1,14 @@
 {
   "name": "yyl-server",
-  "version": "0.3.19",
+  "version": "0.3.20",
   "description": "proxy server for yyl",
   "preferGlobal": true,
   "main": "index.js",
   "types": "index.d.ts",
   "eslintConfig": {
+    "env": {
+      "mocha": true
+    },
     "extends": [
       "yyl-node"
     ]
@@ -35,6 +38,7 @@
     "cm": "node ./test/cmd.js --path ./test/case/mock/config.js",
     "cp": "node ./test/cmd.js --path ./test/case/proxy/config.js --proxy --https",
     "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js",
+    "cc": "node ./test/cmd.js --path ./test/case/proxy-cookies/config.js --proxy",
     "prepublishOnly": "npm run prettier"
   },
   "repository": {
@@ -63,6 +67,8 @@
     "connect-livereload": "0.6.0",
     "http-shutdown": "1.2.1",
     "node-easy-cert": "^1.3.3",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
     "serve-favicon": "2.5.0",
     "serve-index": "1.9.1",
     "serve-static": "1.13.2",
@@ -70,7 +76,6 @@
     "yyl-config-types": "^0.2.0",
     "yyl-fs": "0.3.3",
     "yyl-os": "0.10.3",
-    "yyl-request": "0.1.1",
     "yyl-util": "2.3.8"
   },
   "devDependencies": {
@@ -80,6 +85,7 @@
     "mocha": "^7.0.1",
     "prettier": "^2.0.4",
     "yyl-hander": "^0.3.2",
-    "yyl-print": "^0.7.3"
+    "yyl-print": "^0.7.3",
+    "yyl-request": "0.1.1"
   }
 }
