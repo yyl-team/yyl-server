@@ -13,11 +13,8 @@ import { URL } from 'url'
 import fs from 'fs'
 import http from 'http'
 import express, { Express } from 'express'
-import { LANG } from './const'
+import { LANG, Logger } from './const'
 import { mock } from './mock'
-
-export type LoggerType = 'info' | 'error' | 'warn' | 'success'
-export type Logger = (type: LoggerType, args: any[]) => void
 
 export interface YServerSetting {
   appWillMount: (app: Express) => Promise<any>

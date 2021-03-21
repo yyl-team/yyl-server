@@ -55,3 +55,6 @@ export const LANG = {
 export const USERPROFILE = process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME'] || ''
 export const PROXY_CACHE_PATH = util.path.join(USERPROFILE, '.anyproxy/cache')
 export const PROXY_CRET_PATH = util.path.join(USERPROFILE, '.anyproxy/certificates')
+
+export type LoggerType = 'info' | 'error' | 'warn' | 'success'
+export type Logger = (type: LoggerType, args: any[]) => void
