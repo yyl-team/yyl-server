@@ -11,3 +11,4 @@ build/
 **/__frag/
 .DS_Store
 **/.DS_Store
+yarn-error.log

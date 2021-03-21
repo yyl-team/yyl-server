@@ -9,6 +9,7 @@ export const LANG = {
     START_ERROR: '启动 本地服务失败',
 
     ABORT_BEGIN: '终止 本地服务 开始',
+    ABORT_FAIL: '终止 本地服务 失败',
     ABORT_FINISHED: '终止 本地服务 完成',
 
     PORT_OCCUPIED: '端口 已被占用',
