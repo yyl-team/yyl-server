@@ -4,7 +4,7 @@
   "types": "output/index.d.ts",
   "eslintConfig": {
     "env": {
-      "jest": true
+      "mocha": true
     },
     "extends": [
       "yyl-react"
@@ -34,16 +34,28 @@
     "w": "rollup --watch --config ./rollup.config.js",
     "prepublishOnly": "npm run prettier & npm test & npm run doc",
     "doc": "typedoc src/index.ts --plugin typedoc-plugin-markdown",
-    "test": "npm run build & jest ./test/jest/"
+    "test": "mocha test/mocha/ --timeout 100000",
+    "test:case.base": "mocha test/mocha/case.base.test.js --timeout 100000",
+    "test:case.pj-server": "mocha test/mocha/case.pj-server.test.js --timeout 100000",
+    "test:clean": "mocha test/mocha/clean.test.js --timeout 100000",
+    "test:mock": "mocha test/mocha/mock.test.js --timeout 100000",
+    "test:proxy": "mocha test/mocha/proxy.test.js --timeout 100000",
+    "test:server": "mocha test/mocha/server.test.js --timeout 100000",
+    "cb": "node ./test/cmd.js --path ./test/case/base/config.js",
+    "cm": "node ./test/cmd.js --path ./test/case/mock/config.js",
+    "cp": "node ./test/cmd.js --path ./test/case/proxy/config.js --proxy --https",
+    "cpj": "node ./test/cmd.js --path ./test/case/pj-server/config.js",
+    "cc": "node ./test/cmd.js --path ./test/case/proxy-cookies/config.js --proxy"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.1.1",
+    "chai": "^4.3.4",
     "cross-env": "^5.2.0",
     "eslint": "^6.8.0",
     "eslint-config-yyl-react": "^0.1.9",
-    "jest": "26.6.3",
+    "mocha": "^8.3.2",
     "prettier": "^2.0.4",
     "rollup": "^2.38.2",
     "rollup-plugin-node-externals": "^2.2.0",

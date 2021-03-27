@@ -20,8 +20,10 @@ package-lock.json
 **/*.pug
 **/*.sh
 **/*.conf
+**/*.ico
 **/__frag/*
 .log
 **/*.log
 .DS_Store
 **/.DS_Store
+./resource
