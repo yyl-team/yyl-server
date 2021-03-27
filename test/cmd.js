@@ -1,4 +1,4 @@
-const Runner = require('../lib/runner')
+const { Runner } = require('../')
 const util = require('yyl-util')
 const print = require('yyl-print')
 const Hander = require('yyl-hander')
@@ -38,11 +38,7 @@ const cmder = async function () {
   }
   delete env.path
 
-  const config = await hander.parseConfig(configPath, env, [
-    'localserver',
-    'commit',
-    'proxy'
-  ])
+  const config = await hander.parseConfig(configPath, env, ['localserver', 'commit', 'proxy'])
   const cwd = path.dirname(configPath)
 
   const pkgPath = path.join(cwd, 'package.json')

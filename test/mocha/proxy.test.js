@@ -1,6 +1,6 @@
 const path = require('path')
 const CASE_PATH = path.join(__dirname, '../case')
-const { Server, Proxy } = require('../../index')
+const { YServer, YProxy } = require('../../')
 const request = require('yyl-request')
 const extOs = require('yyl-os')
 const util = require('yyl-util')
@@ -14,7 +14,7 @@ describe('Proxy test', () => {
     const log = () => undefined
     const env = { silent: true }
 
-    const server = new Server({
+    const server = new YServer({
       config: config.localserver,
       log,
       env,
@@ -22,7 +22,7 @@ describe('Proxy test', () => {
     })
     await server.start()
 
-    const proxy = new Proxy({
+    const proxy = new YProxy({
       config: config.proxy,
       log,
       env,

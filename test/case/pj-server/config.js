@@ -1,12 +1,12 @@
-const path = require('path');
-const serverConfig = require('./server.config');
+const path = require('path')
+const serverConfig = require('./server.config')
 
 // + vars
-const PROJECT_NAME = 'fet';
-const WORKFLOW = 'webpack';
-const PLATFORM = 'pc';
-const VERSION = '3.6.0-beta4';
-const SRC_ROOT = './src';
+const PROJECT_NAME = 'fet'
+const WORKFLOW = 'webpack'
+const PLATFORM = 'pc'
+const VERSION = '3.6.0-beta4'
+const SRC_ROOT = './src'
 // - vars
 
 // + setting
@@ -30,10 +30,10 @@ const setting = {
     },
     homePage: 'http://fet.yy.com/'
   }
-};
+}
 // - setting
 
-const DEST_BASE_PATH = path.join(setting.localserver.root, setting.dest.basePath);
+const DEST_BASE_PATH = path.join(setting.localserver.root, setting.dest.basePath)
 
 const config = {
   // + configBase
@@ -59,7 +59,7 @@ const config = {
     ]
   },
   providePlugin: {
-    '$': 'jquery'
+    $: 'jquery'
   },
   alias: {
     // 输出目录中 到 html, js, css, image 层 的路径
@@ -102,6 +102,6 @@ const config = {
     mainHost: '//fet.yy.com'
   }
   // - configCommit
-};
+}
 
-module.exports = config;
+module.exports = config

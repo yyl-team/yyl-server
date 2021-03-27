@@ -14,7 +14,6 @@ import fs from 'fs'
 import http from 'http'
 import express, { Express } from 'express'
 import { LANG, Logger } from './const'
-import { mock } from './mock'
 
 export interface YServerSetting {
   appWillMount: (app: Express) => Promise<any>
@@ -40,6 +39,8 @@ export class YServer {
     console.log(type, ...args)
   }
 
+  cwd: string = process.cwd()
+
   /** 配置 */
   config: Required<LocalserverConfig> = {
     root: process.cwd(),
@@ -63,20 +64,24 @@ export class YServer {
       this.log = logger
     }
 
-    if (cwd) {
-      this.config.root = cwd
-      this.config.mockRoot = path.resolve(cwd, 'mock')
-    }
-
     if (config) {
       this.config = Object.assign(this.config, config)
     }
+
+    if (cwd) {
+      this.cwd = cwd
+    }
+
     if (config.root) {
-      this.config.root = path.resolve(this.config.root, config.root)
-      this.config.mockRoot = path.resolve(this.config.root, 'mock')
+      this.config.root = path.resolve(this.cwd, config.root)
+      this.config.mockRoot = path.resolve(this.cwd, 'mock')
     }
     if (config.mockRoot) {
-      this.config.mockRoot = path.resolve(this.config.root, config.mockRoot)
+      this.config.mockRoot = path.resolve(this.cwd, config.mockRoot)
+    }
+
+    if (config.entry) {
+      this.config.entry = path.resolve(this.cwd, config.entry)
     }
 
     if (env.port) {
@@ -103,9 +108,10 @@ export class YServer {
 
     let app: Express = express()
     if (config.entry) {
-      if (fs.existsSync(config.entry)) {
+      const entryPath = path.resolve(config.root, config.entry)
+      if (fs.existsSync(entryPath)) {
         try {
-          app = require(path.resolve(config.root, config.entry))
+          app = require(entryPath)
         } catch (er) {
           log('error', [`${LANG.SERVER.START_ERROR}: ${chalk.yellow(config.entry)}`, er])
           throw er
@@ -127,19 +133,6 @@ export class YServer {
       log('info', [LANG.SERVER.USE_BASE_SERVER])
       if (option && option.appWillMount) {
         await option.appWillMount(app)
-      }
-
-      // mock
-      const dbPath = path.join(config.mockRoot, 'db.json')
-      const routesPath = path.join(config.mockRoot, 'routes.json')
-      if (fs.existsSync(config.mockRoot) && fs.existsSync(dbPath) && fs.existsSync(routesPath)) {
-        app.use(
-          mock({
-            dbPath,
-            routesPath
-          })
-        )
-        log('info', ['use mock'])
       }
 
       // 执行 post 请求本地服务器时处理

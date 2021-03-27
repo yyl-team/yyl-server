@@ -1,19 +1,15 @@
-const express = require('express');
-const path = require('path');
-const config = require('../server.config');
-const app = express();
+const express = require('express')
+const path = require('path')
+const config = require('../server.config')
+const app = express()
 
-app.use('/assets', express.static(
-  path.join(__dirname, '../dist/assets')
-));
-app.use('/', express.static(
-  path.join(__dirname, '../dist/html')
-));
+app.use('/assets', express.static(path.join(__dirname, '../dist/assets')))
+app.use('/', express.static(path.join(__dirname, '../dist/html')))
 
-const server = app.listen(config.port);
+const server = app.listen(config.port)
 
 app.close = () => {
-  server.close();
-};
+  server.close()
+}
 
-module.exports = app;
+module.exports = app

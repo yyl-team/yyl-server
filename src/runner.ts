@@ -16,7 +16,7 @@ export interface RunnerOption {
 }
 
 export class Runner {
-  static async clean(op: StaticFnOption) {
+  static async clean(op?: StaticFnOption) {
     await YProxy.clean(op)
     await YProxy.certClean(op)
   }
@@ -97,6 +97,10 @@ export class Runner {
         option: this.option.serverOption
       })
       const { serverAddress } = this.server.config
+      this.homePage = serverAddress
+      this.option.yylConfig.localserver = {
+        ...this.server.config
+      }
     }
 
     if (proxy && this.option.env.proxy) {
@@ -152,6 +156,9 @@ export class Runner {
       const { homePage } = this.proxy.config
       if (homePage) {
         this.homePage = homePage
+      }
+      this.option.yylConfig.proxy = {
+        ...this.proxy.config
       }
     }
   }

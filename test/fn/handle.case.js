@@ -1,6 +1,6 @@
 const path = require('path')
 const CASE_PATH = path.join(__dirname, '../case')
-const { Runner } = require('../../index')
+const { Runner } = require('../../')
 const { expect } = require('chai')
 const request = require('yyl-request')
 
@@ -15,7 +15,7 @@ module.exports.handleCase = function (dirname) {
 
       const mountArr = []
       const runner = new Runner({
-        config,
+        yylConfig: config,
         log,
         env,
         cwd: pjPath,

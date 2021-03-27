@@ -19,9 +19,9 @@ export interface StaticFnOption {
 }
 export declare class YProxy {
     /** 清理缓存 */
-    static clean(op: StaticFnOption): Promise<void>;
+    static clean(op?: StaticFnOption): Promise<void>;
     /** 清理证书 */
-    static certClean(op: StaticFnOption): Promise<void>;
+    static certClean(op?: StaticFnOption): Promise<void>;
     config: Required<ProxyConfig>;
     server?: ProxyServer;
     /** 日志输出 */

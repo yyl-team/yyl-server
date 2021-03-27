@@ -4,4 +4,4 @@ module.exports = {
     root: './root'
   },
   proxy: false
-};
+}

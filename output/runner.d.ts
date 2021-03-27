@@ -11,7 +11,7 @@ export interface RunnerOption {
     ignoreServer: boolean;
 }
 export declare class Runner {
-    static clean(op: StaticFnOption): Promise<void>;
+    static clean(op?: StaticFnOption): Promise<void>;
     option: Required<RunnerOption>;
     /** 本地服务 entance */
     server?: YServer;

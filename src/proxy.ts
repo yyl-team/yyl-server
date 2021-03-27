@@ -41,9 +41,8 @@ export interface StaticFnOption {
 }
 export class YProxy {
   /** 清理缓存 */
-  static async clean(op: StaticFnOption) {
-    const { logger } = op
-    const iLog = logger || (() => undefined)
+  static async clean(op?: StaticFnOption) {
+    const iLog = op?.logger || (() => undefined)
     if (fs.existsSync(PROXY_CACHE_PATH)) {
       iLog('info', [`${LANG.PROXY.CLEAN_CACHE_START}: ${chalk.yellow(PROXY_CACHE_PATH)}`])
       const files = await extFs.removeFiles(PROXY_CACHE_PATH)
@@ -56,9 +55,8 @@ export class YProxy {
   }
 
   /** 清理证书 */
-  static async certClean(op: StaticFnOption) {
-    const { logger } = op
-    const iLog = logger || (() => undefined)
+  static async certClean(op?: StaticFnOption) {
+    const iLog = op?.logger || (() => undefined)
     if (fs.existsSync(PROXY_CRET_PATH)) {
       iLog('info', [`${LANG.PROXY.CLEAN_CERT_START}: ${chalk.yellow(PROXY_CRET_PATH)}`])
       const files = await extFs.removeFiles(PROXY_CRET_PATH)
