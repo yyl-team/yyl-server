@@ -1,6 +1,6 @@
 const path = require('path')
 const CASE_PATH = path.join(__dirname, '../case')
-const { Server } = require('../../index')
+const { YServer } = require('../../')
 const request = require('yyl-request')
 const { expect } = require('chai')
 
@@ -13,7 +13,7 @@ describe('Server test', () => {
     const env = { silent: true }
 
     const mountArr = []
-    const server = new Server({
+    const server = new YServer({
       config: config.localserver,
       log,
       env,
@@ -46,7 +46,7 @@ describe('Server test', () => {
     const log = () => undefined
     const env = { silent: true }
 
-    const server = new Server({
+    const server = new YServer({
       config: config.localserver,
       log,
       env,
