@@ -1,18 +1,19 @@
 const path = require('path')
 
 // + vars
-const PROJECT_NAME = 'test';
-const WORKFLOW = 'webpack';
-const PLATFORM = 'pc';
-const VERSION = '3.5.1';
-const SRC_ROOT = './src';
-const COMMON_PATH = '../commons';
-const WEBPACK_CONFIG_PATH = './webpack.config.js';
+const PROJECT_NAME = 'test'
+const WORKFLOW = 'webpack'
+const PLATFORM = 'pc'
+const VERSION = '3.5.1'
+const SRC_ROOT = './src'
+const COMMON_PATH = '../commons'
+const WEBPACK_CONFIG_PATH = './webpack.config.js'
 // - vars
 
 // + setting
 const setting = {
-  localserver: { // 本地服务器配置
+  localserver: {
+    // 本地服务器配置
     root: './dist', // 服务器输出地址
     port: 5000 // 服务器 port
   },
@@ -34,9 +35,11 @@ const setting = {
     },
     homePage: `http://www.yy.com/web/${PROJECT_NAME}/`
   }
-};
-setting.proxy.localRemote[`http://www.yy.com/web/${PROJECT_NAME}`] = `http://127.0.0.1:5000/project/${PROJECT_NAME}/${PLATFORM}/html`;
-setting.proxy.localRemote['http://www.yy.com/api/mock'] = 'http://127.0.0.1:5000/api/mock';
+}
+setting.proxy.localRemote[
+  `http://www.yy.com/web/${PROJECT_NAME}`
+] = `http://127.0.0.1:5000/project/${PROJECT_NAME}/${PLATFORM}/html`
+setting.proxy.localRemote['http://www.yy.com/api/mock'] = 'http://127.0.0.1:5000/api/mock'
 // - setting
 
 const DEST_BASE_PATH = path.join(setting.localserver.root, setting.dest.basePath)
@@ -64,7 +67,7 @@ const config = {
     ]
   },
   providePlugin: {
-    '$': 'jquery'
+    $: 'jquery'
   },
   alias: {
     // 输出目录中 到 html, js, css, image 层 的路径

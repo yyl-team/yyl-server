@@ -1,6 +1,6 @@
 const path = require('path')
 const CASE_PATH = path.join(__dirname, '../case')
-const { Runner } = require('../../index')
+const { Runner } = require('../../')
 const { expect } = require('chai')
 const request = require('yyl-request')
 
@@ -16,12 +16,13 @@ describe(`case ${dirname} test`, () => {
 
     const mountArr = []
     const runner = new Runner({
-      config,
+      yylConfig: config,
       log,
       env,
       cwd: pjPath,
       serverOption: {
         appWillMount() {
+          console.log('11111')
           mountArr.push('will')
           return Promise.resolve()
         },
@@ -42,7 +43,7 @@ describe(`case ${dirname} test`, () => {
       const [, res] = await request(param)
       expect(res.statusCode).to.equal(200)
     }
-    expect(mountArr).to.deep.equal(['did'])
+    expect(mountArr).to.deep.equal(['will', 'did'])
     await runner.abort()
   })
 })
