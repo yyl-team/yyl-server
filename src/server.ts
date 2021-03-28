@@ -16,15 +16,15 @@ import express, { Express } from 'express'
 import { LANG, Logger } from './const'
 
 export interface YServerSetting {
-  appWillMount: (app: Express) => Promise<any>
-  appDidMount: (app: Express) => Promise<any>
+  appWillMount?: (app: Express) => Promise<any>
+  appDidMount?: (app: Express) => Promise<any>
 }
 export interface YServerOption {
-  cwd: string
-  logger: Logger
-  env: Env
-  config: LocalserverConfig
-  option: YServerSetting
+  cwd?: string
+  logger?: Logger
+  env?: Env
+  config?: LocalserverConfig
+  option?: YServerSetting
 }
 
 /** 默认端口 */
@@ -72,25 +72,25 @@ export class YServer {
       this.cwd = cwd
     }
 
-    if (config.root) {
+    if (config?.root) {
       this.config.root = path.resolve(this.cwd, config.root)
       this.config.mockRoot = path.resolve(this.cwd, 'mock')
     }
-    if (config.mockRoot) {
+    if (config?.mockRoot) {
       this.config.mockRoot = path.resolve(this.cwd, config.mockRoot)
     }
 
-    if (config.entry) {
+    if (config?.entry) {
       this.config.entry = path.resolve(this.cwd, config.entry)
     }
 
-    if (env.port) {
+    if (env?.port) {
       this.config.port = env.port
       this.config.lrPort = +`${env.port}1`
       this.config.serverAddress = `http://${extOs.LOCAL_IP}:${env.port}`
     }
 
-    if (env.path) {
+    if (env?.path) {
       this.config.root = path.resolve(this.config.root, env.path)
     }
 

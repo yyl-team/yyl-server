@@ -16,7 +16,7 @@
 
 ### config
 
-• **config**: LocalserverConfig
+• `Optional` **config**: LocalserverConfig
 
 Defined in: server.ts:26
 
@@ -24,7 +24,7 @@ ___
 
 ### cwd
 
-• **cwd**: *string*
+• `Optional` **cwd**: *string*
 
 Defined in: server.ts:23
 
@@ -32,7 +32,7 @@ ___
 
 ### env
 
-• **env**: Env
+• `Optional` **env**: Env
 
 Defined in: server.ts:25
 
@@ -40,7 +40,7 @@ ___
 
 ### logger
 
-• **logger**: Logger
+• `Optional` **logger**: Logger
 
 Defined in: server.ts:24
 
@@ -48,6 +48,6 @@ ___
 
 ### option
 
-• **option**: [*YServerSetting*](yserversetting.md)
+• `Optional` **option**: [*YServerSetting*](yserversetting.md)
 
 Defined in: server.ts:27
