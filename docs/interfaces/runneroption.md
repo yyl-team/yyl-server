@@ -17,7 +17,7 @@
 
 ### cwd
 
-• **cwd**: *string*
+• `Optional` **cwd**: *string*
 
 Defined in: runner.ts:13
 
@@ -25,7 +25,7 @@ ___
 
 ### env
 
-• **env**: Env
+• `Optional` **env**: Env
 
 Defined in: runner.ts:11
 
@@ -33,7 +33,7 @@ ___
 
 ### ignoreServer
 
-• **ignoreServer**: *boolean*
+• `Optional` **ignoreServer**: *boolean*
 
 Defined in: runner.ts:15
 
@@ -41,7 +41,7 @@ ___
 
 ### logger
 
-• **logger**: Logger
+• `Optional` **logger**: Logger
 
 Defined in: runner.ts:12
 
@@ -49,7 +49,7 @@ ___
 
 ### serverOption
 
-• **serverOption**: [*YServerSetting*](yserversetting.md)
+• `Optional` **serverOption**: [*YServerSetting*](yserversetting.md)
 
 Defined in: runner.ts:14
 
