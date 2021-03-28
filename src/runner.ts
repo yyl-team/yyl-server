@@ -8,11 +8,11 @@ import { YProxy, StaticFnOption, LocalRemote } from './proxy'
 
 export interface RunnerOption {
   yylConfig?: YylConfig
-  env: Env
-  logger: Logger
-  cwd: string
-  serverOption: YServerSetting
-  ignoreServer: boolean
+  env?: Env
+  logger?: Logger
+  cwd?: string
+  serverOption?: YServerSetting
+  ignoreServer?: boolean
 }
 
 export class Runner {

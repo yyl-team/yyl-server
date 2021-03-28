@@ -13,7 +13,7 @@
 
 ### appDidMount
 
-• **appDidMount**: (`app`: *Express*) => *Promise*<any\>
+• `Optional` **appDidMount**: (`app`: *Express*) => *Promise*<any\>
 
 #### Type declaration:
 
@@ -35,7 +35,7 @@ ___
 
 ### appWillMount
 
-• **appWillMount**: (`app`: *Express*) => *Promise*<any\>
+• `Optional` **appWillMount**: (`app`: *Express*) => *Promise*<any\>
 
 #### Type declaration:
 
