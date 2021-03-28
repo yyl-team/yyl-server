@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "output/index.js",
   "types": "output/index.d.ts",
   "eslintConfig": {
@@ -33,7 +33,7 @@
     "d": "rollup --config ./rollup.config.js",
     "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js",
     "w": "rollup --watch --config ./rollup.config.js",
-    "prepublishOnly": "npm run prettier & npm run doc",
+    "prepublishOnly": "npm run prettier & npm run build & npm run doc",
     "doc": "typedoc src/index.ts --plugin typedoc-plugin-markdown",
     "test": "mocha test/mocha/ --timeout 100000",
     "test:case.base": "mocha test/mocha/case.base.test.js --timeout 100000",

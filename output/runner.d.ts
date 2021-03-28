@@ -4,11 +4,11 @@ import { YServer, YServerSetting } from './server';
 import { YProxy, StaticFnOption } from './proxy';
 export interface RunnerOption {
     yylConfig?: YylConfig;
-    env: Env;
-    logger: Logger;
-    cwd: string;
-    serverOption: YServerSetting;
-    ignoreServer: boolean;
+    env?: Env;
+    logger?: Logger;
+    cwd?: string;
+    serverOption?: YServerSetting;
+    ignoreServer?: boolean;
 }
 export declare class Runner {
     static clean(op?: StaticFnOption): Promise<void>;
