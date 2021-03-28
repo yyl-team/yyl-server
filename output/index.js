@@ -1,5 +1,5 @@
 /*!
- * yyl-server cjs 1.0.0
+ * yyl-server cjs 1.0.2
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */
@@ -150,22 +150,22 @@ class YServer {
         if (cwd) {
             this.cwd = cwd;
         }
-        if (config.root) {
+        if (config === null || config === void 0 ? void 0 : config.root) {
             this.config.root = path__default['default'].resolve(this.cwd, config.root);
             this.config.mockRoot = path__default['default'].resolve(this.cwd, 'mock');
         }
-        if (config.mockRoot) {
+        if (config === null || config === void 0 ? void 0 : config.mockRoot) {
             this.config.mockRoot = path__default['default'].resolve(this.cwd, config.mockRoot);
         }
-        if (config.entry) {
+        if (config === null || config === void 0 ? void 0 : config.entry) {
             this.config.entry = path__default['default'].resolve(this.cwd, config.entry);
         }
-        if (env.port) {
+        if (env === null || env === void 0 ? void 0 : env.port) {
             this.config.port = env.port;
             this.config.lrPort = +`${env.port}1`;
             this.config.serverAddress = `http://${extOs__default['default'].LOCAL_IP}:${env.port}`;
         }
-        if (env.path) {
+        if (env === null || env === void 0 ? void 0 : env.path) {
             this.config.root = path__default['default'].resolve(this.config.root, env.path);
         }
         if (option) {
