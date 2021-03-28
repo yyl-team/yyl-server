@@ -4,15 +4,15 @@ import http from 'http';
 import { Express } from 'express';
 import { Logger } from './const';
 export interface YServerSetting {
-    appWillMount: (app: Express) => Promise<any>;
-    appDidMount: (app: Express) => Promise<any>;
+    appWillMount?: (app: Express) => Promise<any>;
+    appDidMount?: (app: Express) => Promise<any>;
 }
 export interface YServerOption {
-    cwd: string;
-    logger: Logger;
-    env: Env;
-    config: LocalserverConfig;
-    option: YServerSetting;
+    cwd?: string;
+    logger?: Logger;
+    env?: Env;
+    config?: LocalserverConfig;
+    option?: YServerSetting;
 }
 export declare class YServer {
     app?: Express;
