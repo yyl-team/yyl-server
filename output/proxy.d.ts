@@ -1,6 +1,6 @@
 import { ProxyServer } from 'anyproxy';
 import { ProxyConfig, Env } from 'yyl-config-types';
-import { Logger } from './const';
+import { Logger } from 'yyl-seed-base';
 export interface LocalRemote {
     [remoteUrl: string]: string;
 }

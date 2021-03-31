@@ -38,7 +38,7 @@ Name | Type |
 
 **Returns:** [*YServer*](yserver.md)
 
-Defined in: server.ts:59
+Defined in: [server.ts:60](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L60)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Defined in: server.ts:59
 
 • `Optional` **app**: *Express*
 
-Defined in: server.ts:33
+Defined in: [server.ts:34](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L34)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 配置
 
-Defined in: server.ts:45
+Defined in: [server.ts:46](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L46)
 
 ___
 
@@ -64,17 +64,17 @@ ___
 
 • **cwd**: *string*
 
-Defined in: server.ts:42
+Defined in: [server.ts:43](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L43)
 
 ___
 
 ### log
 
-• **log**: Logger
+• **log**: *Logger*<keyof SeedEventName\>
 
 日志输出
 
-Defined in: server.ts:38
+Defined in: [server.ts:39](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L39)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • `Optional` **lrServer**: *any*
 
-Defined in: server.ts:35
+Defined in: [server.ts:36](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L36)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 option
 
-Defined in: server.ts:56
+Defined in: [server.ts:57](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L57)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 • `Optional` **server**: *Server*
 
-Defined in: server.ts:34
+Defined in: [server.ts:35](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L35)
 
 ## Methods
 
@@ -110,7 +110,7 @@ Defined in: server.ts:34
 
 **Returns:** *Promise*<void\>
 
-Defined in: server.ts:217
+Defined in: [server.ts:222](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L222)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: server.ts:234
+Defined in: [server.ts:239](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L239)
 
 ___
 
@@ -130,4 +130,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: server.ts:102
+Defined in: [server.ts:103](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L103)

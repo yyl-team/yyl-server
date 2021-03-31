@@ -36,7 +36,7 @@ Name | Type |
 
 **Returns:** [*Runner*](runner.md)
 
-Defined in: runner.ts:41
+Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L42)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Defined in: runner.ts:41
 
 主页
 
-Defined in: runner.ts:41
+Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L42)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **option**: *Required*<[*RunnerOption*](../interfaces/runneroption.md)\>
 
-Defined in: runner.ts:24
+Defined in: [runner.ts:25](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L25)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 反向代理 entance
 
-Defined in: runner.ts:39
+Defined in: [runner.ts:40](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L40)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 本地服务 entance
 
-Defined in: runner.ts:37
+Defined in: [runner.ts:38](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L38)
 
 ## Methods
 
@@ -84,7 +84,7 @@ Defined in: runner.ts:37
 
 **Returns:** *Promise*<void\>
 
-Defined in: runner.ts:177
+Defined in: [runner.ts:178](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L178)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: runner.ts:188
+Defined in: [runner.ts:189](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L189)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: runner.ts:166
+Defined in: [runner.ts:167](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L167)
 
 ___
 
@@ -120,4 +120,4 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: runner.ts:19
+Defined in: [runner.ts:20](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L20)

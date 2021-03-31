@@ -2,9 +2,10 @@ import { URL } from 'url'
 import extOs from 'yyl-os'
 import { CommitConfig, Env, YylConfig } from 'yyl-config-types'
 
-import { LANG, Logger } from './const'
+import { LANG } from './const'
 import { YServer, YServerSetting } from './server'
 import { YProxy, StaticFnOption, LocalRemote } from './proxy'
+import { Logger } from 'yyl-seed-base'
 
 export interface RunnerOption {
   yylConfig?: YylConfig

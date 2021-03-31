@@ -30,4 +30,4 @@
 
 Ƭ **YProxyProperty**: *Required*<[*YProxyOption*](interfaces/yproxyoption.md)\>
 
-Defined in: proxy.ts:32
+Defined in: [proxy.ts:33](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L33)

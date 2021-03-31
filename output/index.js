@@ -1,5 +1,5 @@
 /*!
- * yyl-server cjs 1.0.2
+ * yyl-server cjs 1.0.3
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */
@@ -121,8 +121,8 @@ const DEFAULT_PORT = 5000;
 class YServer {
     constructor(op) {
         /** 日志输出 */
-        this.log = (type, args) => {
-            console.log(type, ...args);
+        this.log = (type, args1, args2) => {
+            console.log(type, args1, args2);
         };
         this.cwd = process.cwd();
         /** 配置 */
@@ -175,7 +175,7 @@ class YServer {
     start() {
         return __awaiter(this, void 0, void 0, function* () {
             const { config, log, option } = this;
-            log('info', [LANG.SERVER.START_BEGIN]);
+            log('msg', 'info', [LANG.SERVER.START_BEGIN]);
             if (!(yield extOs__default['default'].checkPort(config.port))) {
                 throw new Error(`${LANG.SERVER.PORT_OCCUPIED}: ${chalk__default['default'].yellow(`${config.port}`)}`);
             }
@@ -187,13 +187,13 @@ class YServer {
                         app = require(entryPath);
                     }
                     catch (er) {
-                        log('error', [`${LANG.SERVER.START_ERROR}: ${chalk__default['default'].yellow(config.entry)}`, er]);
+                        log('msg', 'error', [`${LANG.SERVER.START_ERROR}: ${chalk__default['default'].yellow(config.entry)}`, er]);
                         throw er;
                     }
-                    log('info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk__default['default'].yellow(config.entry)}`]);
+                    log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk__default['default'].yellow(config.entry)}`]);
                     if (!app || typeof app.use !== 'function') {
-                        log('warn', [`${LANG.SERVER.NOT_EXPORT_APP}: ${chalk__default['default'].yellow(config.entry)}`]);
-                        log('success', [LANG.SERVER.START_FINISHED]);
+                        log('msg', 'warn', [`${LANG.SERVER.NOT_EXPORT_APP}: ${chalk__default['default'].yellow(config.entry)}`]);
+                        log('msg', 'success', [LANG.SERVER.START_FINISHED]);
                         return;
                     }
                     if (option && option.appWillMount) {
@@ -202,11 +202,11 @@ class YServer {
                     // 兼容 this.server
                 }
                 else {
-                    log('error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`]);
+                    log('msg', 'error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`]);
                 }
             }
             else {
-                log('info', [LANG.SERVER.USE_BASE_SERVER]);
+                log('msg', 'info', [LANG.SERVER.USE_BASE_SERVER]);
                 if (option && option.appWillMount) {
                     yield option.appWillMount(app);
                 }
@@ -243,7 +243,7 @@ class YServer {
                 app.use(serveIndex__default['default'](config.root));
                 const server = http__default['default'].createServer(app);
                 server.on('error', (err) => {
-                    log('error', [err]);
+                    log('msg', 'error', [err]);
                     throw err;
                 });
                 yield new Promise((resolve, reject) => {
@@ -255,8 +255,10 @@ class YServer {
                     });
                 });
                 this.server = server;
-                log('success', [`${LANG.INFO.SERVER_PATH}: ${chalk__default['default'].yellow.bold(config.root)}`]);
-                log('success', [`${LANG.INFO.SERVER_ADDRESS}: ${chalk__default['default'].yellow.bold(config.serverAddress)}`]);
+                log('msg', 'success', [`${LANG.INFO.SERVER_PATH}: ${chalk__default['default'].yellow.bold(config.root)}`]);
+                log('msg', 'success', [
+                    `${LANG.INFO.SERVER_ADDRESS}: ${chalk__default['default'].yellow.bold(config.serverAddress)}`
+                ]);
             }
             // livereload
             if (config.livereload) {
@@ -267,27 +269,29 @@ class YServer {
                     port: config.lrPort,
                     src: `//${extOs__default['default'].LOCAL_IP}:${config.lrPort}/livereload.js?snipver=1`
                 }));
-                log('success', [`${LANG.INFO.SERVER_LR_PORT}: ${chalk__default['default'].yellow.bold(`${config.lrPort}`)}`]);
+                log('msg', 'success', [
+                    `${LANG.INFO.SERVER_LR_PORT}: ${chalk__default['default'].yellow.bold(`${config.lrPort}`)}`
+                ]);
             }
             if (option && option.appDidMount) {
                 yield option.appDidMount(app);
             }
             this.app = app;
-            log('info', [LANG.SERVER.START_FINISHED]);
+            log('msg', 'info', [LANG.SERVER.START_FINISHED]);
         });
     }
     abort() {
         return __awaiter(this, void 0, void 0, function* () {
             const { log, server } = this;
             if (server) {
-                log('info', [LANG.SERVER.ABORT_BEGIN]);
+                log('msg', 'info', [LANG.SERVER.ABORT_BEGIN]);
                 yield new Promise((resolve, reject) => {
                     server === null || server === void 0 ? void 0 : server.close((err) => {
                         if (err) {
-                            log('warn', [LANG.SERVER.ABORT_FAIL, (err === null || err === void 0 ? void 0 : err.message) || err]);
+                            log('msg', 'warn', [LANG.SERVER.ABORT_FAIL, (err === null || err === void 0 ? void 0 : err.message) || err]);
                         }
                         else {
-                            log('info', [LANG.SERVER.ABORT_FINISHED]);
+                            log('msg', 'info', [LANG.SERVER.ABORT_FINISHED]);
                         }
                         resolve(undefined);
                     });
@@ -300,14 +304,14 @@ class YServer {
             const { config, log } = this;
             const { lrPort, livereload } = config;
             if (livereload) {
-                log('info', [LANG.SERVER.REQUEST_LIVERELOAD_START]);
+                log('msg', 'info', [LANG.SERVER.REQUEST_LIVERELOAD_START]);
                 const reloadPath = `http://${extOs__default['default'].LOCAL_IP}:${lrPort}/changed?files=1`;
                 try {
                     yield rp__default['default'](reloadPath);
-                    log('info', [LANG.SERVER.REQUEST_LIVERELOAD_FINISHED]);
+                    log('msg', 'info', [LANG.SERVER.REQUEST_LIVERELOAD_FINISHED]);
                 }
                 catch (er) {
-                    log('warn', [`${LANG.SERVER.REQUEST_LIVERELOAD_FAIL}: ${er.message}`]);
+                    log('msg', 'warn', [`${LANG.SERVER.REQUEST_LIVERELOAD_FAIL}: ${er.message}`]);
                 }
             }
         });
@@ -333,8 +337,8 @@ class YProxy {
             ignores: []
         };
         /** 日志输出 */
-        this.log = (type, args) => {
-            console.log(type, ...args);
+        this.log = (type, args1, args2) => {
+            console.log(type, args1, args2);
         };
         const { env, config, logger } = op;
         if (config) {
@@ -367,14 +371,14 @@ class YProxy {
         return __awaiter(this, void 0, void 0, function* () {
             const iLog = (op === null || op === void 0 ? void 0 : op.logger) || (() => undefined);
             if (fs__default['default'].existsSync(PROXY_CACHE_PATH)) {
-                iLog('info', [`${LANG.PROXY.CLEAN_CACHE_START}: ${chalk__default['default'].yellow(PROXY_CACHE_PATH)}`]);
+                iLog('msg', 'info', [`${LANG.PROXY.CLEAN_CACHE_START}: ${chalk__default['default'].yellow(PROXY_CACHE_PATH)}`]);
                 const files = yield extFs__default['default'].removeFiles(PROXY_CACHE_PATH);
-                iLog('success', [
+                iLog('msg', 'success', [
                     `${LANG.PROXY.CLEAN_CACHE_FINISHED}, total ${chalk__default['default'].yellow(`${files.length}`)} files`
                 ]);
             }
             else {
-                iLog('success', [LANG.PROXY.CLEAN_CACHE_FINISHED_EMPTY]);
+                iLog('msg', 'success', [LANG.PROXY.CLEAN_CACHE_FINISHED_EMPTY]);
             }
         });
     }
@@ -383,15 +387,15 @@ class YProxy {
         return __awaiter(this, void 0, void 0, function* () {
             const iLog = (op === null || op === void 0 ? void 0 : op.logger) || (() => undefined);
             if (fs__default['default'].existsSync(PROXY_CRET_PATH)) {
-                iLog('info', [`${LANG.PROXY.CLEAN_CERT_START}: ${chalk__default['default'].yellow(PROXY_CRET_PATH)}`]);
+                iLog('msg', 'info', [`${LANG.PROXY.CLEAN_CERT_START}: ${chalk__default['default'].yellow(PROXY_CRET_PATH)}`]);
                 const files = yield extFs__default['default'].removeFiles(PROXY_CRET_PATH);
-                iLog('success', [
+                iLog('msg', 'success', [
                     `${LANG.PROXY.CLEAN_CERT_FINISHED}, total ${chalk__default['default'].yellow(`${files.length}`)} files`
                 ]);
-                iLog('success', [LANG.PROXY.CERT_REINSTALL]);
+                iLog('msg', 'success', [LANG.PROXY.CERT_REINSTALL]);
             }
             else {
-                iLog('success', [LANG.PROXY.CLEAN_CERT_FINISHED]);
+                iLog('msg', 'success', [LANG.PROXY.CLEAN_CERT_FINISHED]);
             }
         });
     }
@@ -400,25 +404,28 @@ class YProxy {
         return __awaiter(this, void 0, void 0, function* () {
             const { log, config } = this;
             const self = this;
-            log('info', [LANG.PROXY.START_BEGIN]);
+            log('msg', 'info', [LANG.PROXY.START_BEGIN]);
             if (!(yield extOs__default['default'].checkPort(config.port))) {
                 throw new Error(`${LANG.SERVER.PORT_OCCUPIED}: ${chalk__default['default'].yellow(`${config.port}`)}`);
             }
             yield YProxy.clean({ logger: log });
             if (config.https) {
-                log('success', [LANG.PROXY.USE_HTTPS]);
+                log('msg', 'success', [LANG.PROXY.USE_HTTPS]);
                 if (!AnyProxy__default['default'].utils.certMgr.ifRootCAFileExists()) {
                     yield util__default['default'].makeAwait((next) => {
                         AnyProxy__default['default'].utils.certMgr.generateRootCA((error, keyPath) => {
-                            log('info', [LANG.PROXY.GENERATE_ROOT_CA_FINISHED]);
+                            log('msg', 'info', [LANG.PROXY.GENERATE_ROOT_CA_FINISHED]);
                             // let users to trust this CA before using proxy
                             if (!error) {
                                 const certDir = path__default['default'].dirname(keyPath);
-                                log('success', [LANG.PROXY.GENERATE_ROOT_CA_FINISHED, chalk__default['default'].yellow.bold(certDir)]);
+                                log('msg', 'success', [
+                                    LANG.PROXY.GENERATE_ROOT_CA_FINISHED,
+                                    chalk__default['default'].yellow.bold(certDir)
+                                ]);
                                 extOs__default['default'].openPath(certDir);
                             }
                             else {
-                                log('error', [LANG.PROXY.GENERATE_ROOT_CA_ERROR, error]);
+                                log('msg', 'error', [LANG.PROXY.GENERATE_ROOT_CA_ERROR, error]);
                             }
                             next();
                         });
@@ -493,7 +500,7 @@ class YProxy {
                                         encoding: null
                                     }, (err, vRes) => {
                                         if (err) {
-                                            log('warn', [`${proxyUrl} - ${LANG.PROXY.REQUEST_ERROR}:`, err]);
+                                            log('msg', 'warn', [`${proxyUrl} - ${LANG.PROXY.REQUEST_ERROR}:`, err]);
                                             resolve(null);
                                         }
                                         else if (/^404|405$/.test(`${vRes.statusCode}`)) {
@@ -548,14 +555,14 @@ class YProxy {
                 const uiAddress = `http://${extOs__default['default'].LOCAL_IP}:${(_a = proxyOpts.webInterface) === null || _a === void 0 ? void 0 : _a.webPort}/`;
                 const port = config.port;
                 server.on('ready', () => {
-                    log('success', [`${LANG.INFO.PROXY_UI_ADDRESS}: ${chalk__default['default'].yellow.bold(uiAddress)}`]);
-                    log('success', [`${LANG.INFO.PROXY_PORT}: ${chalk__default['default'].yellow.bold(`${port}`)}`]);
+                    log('msg', 'success', [`${LANG.INFO.PROXY_UI_ADDRESS}: ${chalk__default['default'].yellow.bold(uiAddress)}`]);
+                    log('msg', 'success', [`${LANG.INFO.PROXY_PORT}: ${chalk__default['default'].yellow.bold(`${port}`)}`]);
                     Object.keys(config.localRemote).forEach((key) => {
-                        log('success', [
+                        log('msg', 'success', [
                             `${LANG.INFO.PROXY_MAP}: ${chalk__default['default'].cyan(key)} => ${chalk__default['default'].yellow.bold(config.localRemote[key])}`
                         ]);
                     });
-                    log('success', [LANG.PROXY.START_FINISHED]);
+                    log('msg', 'success', [LANG.PROXY.START_FINISHED]);
                     resolve(config);
                 });
                 server.on('error', (e) => {
