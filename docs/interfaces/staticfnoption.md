@@ -12,6 +12,6 @@
 
 ### logger
 
-• `Optional` **logger**: Logger
+• `Optional` **logger**: *Logger*<keyof SeedEventName\>
 
-Defined in: proxy.ts:40
+Defined in: [proxy.ts:41](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L41)

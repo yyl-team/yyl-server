@@ -46,5 +46,3 @@ export declare const LANG: {
 export declare const USERPROFILE: string;
 export declare const PROXY_CACHE_PATH: string;
 export declare const PROXY_CRET_PATH: string;
-export declare type LoggerType = 'info' | 'error' | 'warn' | 'success';
-export declare type Logger = (type: LoggerType, args: any[]) => void;

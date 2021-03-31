@@ -13,7 +13,8 @@ import { URL } from 'url'
 import fs from 'fs'
 import http from 'http'
 import express, { Express } from 'express'
-import { LANG, Logger } from './const'
+import { LANG } from './const'
+import { Logger } from 'yyl-seed-base'
 
 export interface YServerSetting {
   appWillMount?: (app: Express) => Promise<any>
@@ -35,8 +36,8 @@ export class YServer {
   lrServer?: any
 
   /** 日志输出 */
-  log: Logger = (type, args) => {
-    console.log(type, ...args)
+  log: Logger = (type, args1, args2) => {
+    console.log(type, args1, args2)
   }
 
   cwd: string = process.cwd()
@@ -101,7 +102,7 @@ export class YServer {
 
   async start() {
     const { config, log, option } = this
-    log('info', [LANG.SERVER.START_BEGIN])
+    log('msg', 'info', [LANG.SERVER.START_BEGIN])
     if (!(await extOs.checkPort(config.port))) {
       throw new Error(`${LANG.SERVER.PORT_OCCUPIED}: ${chalk.yellow(`${config.port}`)}`)
     }
@@ -113,13 +114,13 @@ export class YServer {
         try {
           app = require(entryPath)
         } catch (er) {
-          log('error', [`${LANG.SERVER.START_ERROR}: ${chalk.yellow(config.entry)}`, er])
+          log('msg', 'error', [`${LANG.SERVER.START_ERROR}: ${chalk.yellow(config.entry)}`, er])
           throw er
         }
-        log('info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk.yellow(config.entry)}`])
+        log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk.yellow(config.entry)}`])
         if (!app || typeof app.use !== 'function') {
-          log('warn', [`${LANG.SERVER.NOT_EXPORT_APP}: ${chalk.yellow(config.entry)}`])
-          log('success', [LANG.SERVER.START_FINISHED])
+          log('msg', 'warn', [`${LANG.SERVER.NOT_EXPORT_APP}: ${chalk.yellow(config.entry)}`])
+          log('msg', 'success', [LANG.SERVER.START_FINISHED])
           return
         }
         if (option && option.appWillMount) {
@@ -127,10 +128,10 @@ export class YServer {
         }
         // 兼容 this.server
       } else {
-        log('error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`])
+        log('msg', 'error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`])
       }
     } else {
-      log('info', [LANG.SERVER.USE_BASE_SERVER])
+      log('msg', 'info', [LANG.SERVER.USE_BASE_SERVER])
       if (option && option.appWillMount) {
         await option.appWillMount(app)
       }
@@ -173,7 +174,7 @@ export class YServer {
       const server = http.createServer(app)
 
       server.on('error', (err) => {
-        log('error', [err])
+        log('msg', 'error', [err])
         throw err
       })
 
@@ -188,8 +189,10 @@ export class YServer {
 
       this.server = server
 
-      log('success', [`${LANG.INFO.SERVER_PATH}: ${chalk.yellow.bold(config.root)}`])
-      log('success', [`${LANG.INFO.SERVER_ADDRESS}: ${chalk.yellow.bold(config.serverAddress)}`])
+      log('msg', 'success', [`${LANG.INFO.SERVER_PATH}: ${chalk.yellow.bold(config.root)}`])
+      log('msg', 'success', [
+        `${LANG.INFO.SERVER_ADDRESS}: ${chalk.yellow.bold(config.serverAddress)}`
+      ])
     }
 
     // livereload
@@ -203,7 +206,9 @@ export class YServer {
           src: `//${extOs.LOCAL_IP}:${config.lrPort}/livereload.js?snipver=1`
         })
       )
-      log('success', [`${LANG.INFO.SERVER_LR_PORT}: ${chalk.yellow.bold(`${config.lrPort}`)}`])
+      log('msg', 'success', [
+        `${LANG.INFO.SERVER_LR_PORT}: ${chalk.yellow.bold(`${config.lrPort}`)}`
+      ])
     }
 
     if (option && option.appDidMount) {
@@ -211,19 +216,19 @@ export class YServer {
     }
 
     this.app = app
-    log('info', [LANG.SERVER.START_FINISHED])
+    log('msg', 'info', [LANG.SERVER.START_FINISHED])
   }
 
   async abort() {
     const { log, server } = this
     if (server) {
-      log('info', [LANG.SERVER.ABORT_BEGIN])
+      log('msg', 'info', [LANG.SERVER.ABORT_BEGIN])
       await new Promise((resolve, reject) => {
         server?.close((err) => {
           if (err) {
-            log('warn', [LANG.SERVER.ABORT_FAIL, err?.message || err])
+            log('msg', 'warn', [LANG.SERVER.ABORT_FAIL, err?.message || err])
           } else {
-            log('info', [LANG.SERVER.ABORT_FINISHED])
+            log('msg', 'info', [LANG.SERVER.ABORT_FINISHED])
           }
           resolve(undefined)
         })
@@ -235,13 +240,13 @@ export class YServer {
     const { config, log } = this
     const { lrPort, livereload } = config
     if (livereload) {
-      log('info', [LANG.SERVER.REQUEST_LIVERELOAD_START])
+      log('msg', 'info', [LANG.SERVER.REQUEST_LIVERELOAD_START])
       const reloadPath = `http://${extOs.LOCAL_IP}:${lrPort}/changed?files=1`
       try {
         await rp(reloadPath)
-        log('info', [LANG.SERVER.REQUEST_LIVERELOAD_FINISHED])
+        log('msg', 'info', [LANG.SERVER.REQUEST_LIVERELOAD_FINISHED])
       } catch (er) {
-        log('warn', [`${LANG.SERVER.REQUEST_LIVERELOAD_FAIL}: ${er.message}`])
+        log('msg', 'warn', [`${LANG.SERVER.REQUEST_LIVERELOAD_FAIL}: ${er.message}`])
       }
     }
   }

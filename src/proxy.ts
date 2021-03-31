@@ -8,8 +8,9 @@ import { URL } from 'url'
 import AnyProxy, { ProxyOptions, ProxyServer } from 'anyproxy'
 import request from 'request'
 import { ProxyConfig, Env } from 'yyl-config-types'
+import { Logger } from 'yyl-seed-base'
 
-import { LANG, Logger, PROXY_CACHE_PATH, PROXY_CRET_PATH } from './const'
+import { LANG, PROXY_CACHE_PATH, PROXY_CRET_PATH } from './const'
 
 const hideProtocol = function (str: string) {
   if (typeof str === 'string') {
@@ -44,13 +45,13 @@ export class YProxy {
   static async clean(op?: StaticFnOption) {
     const iLog = op?.logger || (() => undefined)
     if (fs.existsSync(PROXY_CACHE_PATH)) {
-      iLog('info', [`${LANG.PROXY.CLEAN_CACHE_START}: ${chalk.yellow(PROXY_CACHE_PATH)}`])
+      iLog('msg', 'info', [`${LANG.PROXY.CLEAN_CACHE_START}: ${chalk.yellow(PROXY_CACHE_PATH)}`])
       const files = await extFs.removeFiles(PROXY_CACHE_PATH)
-      iLog('success', [
+      iLog('msg', 'success', [
         `${LANG.PROXY.CLEAN_CACHE_FINISHED}, total ${chalk.yellow(`${files.length}`)} files`
       ])
     } else {
-      iLog('success', [LANG.PROXY.CLEAN_CACHE_FINISHED_EMPTY])
+      iLog('msg', 'success', [LANG.PROXY.CLEAN_CACHE_FINISHED_EMPTY])
     }
   }
 
@@ -58,15 +59,15 @@ export class YProxy {
   static async certClean(op?: StaticFnOption) {
     const iLog = op?.logger || (() => undefined)
     if (fs.existsSync(PROXY_CRET_PATH)) {
-      iLog('info', [`${LANG.PROXY.CLEAN_CERT_START}: ${chalk.yellow(PROXY_CRET_PATH)}`])
+      iLog('msg', 'info', [`${LANG.PROXY.CLEAN_CERT_START}: ${chalk.yellow(PROXY_CRET_PATH)}`])
       const files = await extFs.removeFiles(PROXY_CRET_PATH)
 
-      iLog('success', [
+      iLog('msg', 'success', [
         `${LANG.PROXY.CLEAN_CERT_FINISHED}, total ${chalk.yellow(`${files.length}`)} files`
       ])
-      iLog('success', [LANG.PROXY.CERT_REINSTALL])
+      iLog('msg', 'success', [LANG.PROXY.CERT_REINSTALL])
     } else {
-      iLog('success', [LANG.PROXY.CLEAN_CERT_FINISHED])
+      iLog('msg', 'success', [LANG.PROXY.CLEAN_CERT_FINISHED])
     }
   }
 
@@ -82,8 +83,8 @@ export class YProxy {
   server?: ProxyServer
 
   /** 日志输出 */
-  log: Logger = (type, args) => {
-    console.log(type, ...args)
+  log: Logger = (type, args1, args2) => {
+    console.log(type, args1, args2)
   }
 
   constructor(op: YProxyOption) {
@@ -120,25 +121,28 @@ export class YProxy {
   async start() {
     const { log, config } = this
     const self = this
-    log('info', [LANG.PROXY.START_BEGIN])
+    log('msg', 'info', [LANG.PROXY.START_BEGIN])
     if (!(await extOs.checkPort(config.port))) {
       throw new Error(`${LANG.SERVER.PORT_OCCUPIED}: ${chalk.yellow(`${config.port}`)}`)
     }
     await YProxy.clean({ logger: log })
 
     if (config.https) {
-      log('success', [LANG.PROXY.USE_HTTPS])
+      log('msg', 'success', [LANG.PROXY.USE_HTTPS])
       if (!AnyProxy.utils.certMgr.ifRootCAFileExists()) {
         await util.makeAwait((next) => {
           AnyProxy.utils.certMgr.generateRootCA((error, keyPath) => {
-            log('info', [LANG.PROXY.GENERATE_ROOT_CA_FINISHED])
+            log('msg', 'info', [LANG.PROXY.GENERATE_ROOT_CA_FINISHED])
             // let users to trust this CA before using proxy
             if (!error) {
               const certDir = path.dirname(keyPath)
-              log('success', [LANG.PROXY.GENERATE_ROOT_CA_FINISHED, chalk.yellow.bold(certDir)])
+              log('msg', 'success', [
+                LANG.PROXY.GENERATE_ROOT_CA_FINISHED,
+                chalk.yellow.bold(certDir)
+              ])
               extOs.openPath(certDir)
             } else {
-              log('error', [LANG.PROXY.GENERATE_ROOT_CA_ERROR, error])
+              log('msg', 'error', [LANG.PROXY.GENERATE_ROOT_CA_ERROR, error])
             }
             next()
           })
@@ -221,7 +225,7 @@ export class YProxy {
                 },
                 (err, vRes) => {
                   if (err) {
-                    log('warn', [`${proxyUrl} - ${LANG.PROXY.REQUEST_ERROR}:`, err])
+                    log('msg', 'warn', [`${proxyUrl} - ${LANG.PROXY.REQUEST_ERROR}:`, err])
                     resolve(null)
                   } else if (/^404|405$/.test(`${vRes.statusCode}`)) {
                     resolve(null)
@@ -276,16 +280,16 @@ export class YProxy {
       const port = config.port
 
       server.on('ready', () => {
-        log('success', [`${LANG.INFO.PROXY_UI_ADDRESS}: ${chalk.yellow.bold(uiAddress)}`])
-        log('success', [`${LANG.INFO.PROXY_PORT}: ${chalk.yellow.bold(`${port}`)}`])
+        log('msg', 'success', [`${LANG.INFO.PROXY_UI_ADDRESS}: ${chalk.yellow.bold(uiAddress)}`])
+        log('msg', 'success', [`${LANG.INFO.PROXY_PORT}: ${chalk.yellow.bold(`${port}`)}`])
         Object.keys(config.localRemote).forEach((key) => {
-          log('success', [
+          log('msg', 'success', [
             `${LANG.INFO.PROXY_MAP}: ${chalk.cyan(key)} => ${chalk.yellow.bold(
               config.localRemote[key]
             )}`
           ])
         })
-        log('success', [LANG.PROXY.START_FINISHED])
+        log('msg', 'success', [LANG.PROXY.START_FINISHED])
         resolve(config)
       })
 

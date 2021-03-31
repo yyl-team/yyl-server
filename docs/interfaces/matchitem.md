@@ -15,7 +15,7 @@
 
 • **prefix**: *string*
 
-Defined in: proxy.ts:35
+Defined in: [proxy.ts:36](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L36)
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **result**: *string*
 
-Defined in: proxy.ts:36
+Defined in: [proxy.ts:37](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L37)
