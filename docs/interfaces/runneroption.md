@@ -17,11 +17,11 @@
 
 ### cwd
 
-• `Optional` **cwd**: *string*
+• `Optional` **cwd**: _string_
 
 Defined in: [runner.ts:14](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L14)
 
-___
+---
 
 ### env
 
@@ -29,31 +29,31 @@ ___
 
 Defined in: [runner.ts:12](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L12)
 
-___
+---
 
 ### ignoreServer
 
-• `Optional` **ignoreServer**: *boolean*
+• `Optional` **ignoreServer**: _boolean_
 
 Defined in: [runner.ts:16](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L16)
 
-___
+---
 
 ### logger
 
-• `Optional` **logger**: *Logger*<keyof SeedEventName\>
+• `Optional` **logger**: _Logger_<keyof SeedEventName\>
 
 Defined in: [runner.ts:13](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L13)
 
-___
+---
 
 ### serverOption
 
-• `Optional` **serverOption**: [*YServerSetting*](yserversetting.md)
+• `Optional` **serverOption**: [_YServerSetting_](yserversetting.md)
 
 Defined in: [runner.ts:15](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L15)
 
-___
+---
 
 ### yylConfig
 

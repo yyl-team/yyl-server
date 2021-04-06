@@ -26,15 +26,15 @@
 
 ### constructor
 
-\+ **new Runner**(`op`: [*RunnerOption*](../interfaces/runneroption.md)): [*Runner*](runner.md)
+\+ **new Runner**(`op`: [_RunnerOption_](../interfaces/runneroption.md)): [_Runner_](runner.md)
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`op` | [*RunnerOption*](../interfaces/runneroption.md) |
+| Name | Type                                            |
+| :--- | :---------------------------------------------- |
+| `op` | [_RunnerOption_](../interfaces/runneroption.md) |
 
-**Returns:** [*Runner*](runner.md)
+**Returns:** [_Runner_](runner.md)
 
 Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L42)
 
@@ -42,35 +42,35 @@ Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/4a70c
 
 ### homePage
 
-• **homePage**: *string*= ''
+• **homePage**: _string_= ''
 
 主页
 
 Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L42)
 
-___
+---
 
 ### option
 
-• **option**: *Required*<[*RunnerOption*](../interfaces/runneroption.md)\>
+• **option**: _Required_<[_RunnerOption_](../interfaces/runneroption.md)\>
 
 Defined in: [runner.ts:25](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L25)
 
-___
+---
 
 ### proxy
 
-• `Optional` **proxy**: [*YProxy*](yproxy.md)
+• `Optional` **proxy**: [_YProxy_](yproxy.md)
 
 反向代理 entance
 
 Defined in: [runner.ts:40](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L40)
 
-___
+---
 
 ### server
 
-• `Optional` **server**: [*YServer*](yserver.md)
+• `Optional` **server**: [_YServer_](yserver.md)
 
 本地服务 entance
 
@@ -80,44 +80,44 @@ Defined in: [runner.ts:38](https://github.com/jackness1208/yyl-server/blob/4a70c
 
 ### abort
 
-▸ **abort**(): *Promise*<void\>
+▸ **abort**(): _Promise_<void\>
 
-**Returns:** *Promise*<void\>
+**Returns:** _Promise_<void\>
 
 Defined in: [runner.ts:178](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L178)
 
-___
+---
 
 ### livereload
 
-▸ **livereload**(): *Promise*<void\>
+▸ **livereload**(): _Promise_<void\>
 
-**Returns:** *Promise*<void\>
+**Returns:** _Promise_<void\>
 
 Defined in: [runner.ts:189](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L189)
 
-___
+---
 
 ### start
 
-▸ **start**(): *Promise*<void\>
+▸ **start**(): _Promise_<void\>
 
-**Returns:** *Promise*<void\>
+**Returns:** _Promise_<void\>
 
 Defined in: [runner.ts:167](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L167)
 
-___
+---
 
 ### clean
 
-▸ `Static`**clean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
+▸ `Static`**clean**(`op?`: [_StaticFnOption_](../interfaces/staticfnoption.md)): _Promise_<void\>
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
+| Name  | Type                                                |
+| :---- | :-------------------------------------------------- |
+| `op?` | [_StaticFnOption_](../interfaces/staticfnoption.md) |
 
-**Returns:** *Promise*<void\>
+**Returns:** _Promise_<void\>
 
 Defined in: [runner.ts:20](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L20)

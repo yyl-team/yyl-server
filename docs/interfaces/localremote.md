@@ -4,4 +4,4 @@
 
 ## Indexable
 
-▪ [remoteUrl: *string*]: *string*
+▪ [remoteUrl: *string*]: _string_

@@ -83,7 +83,7 @@ export class Runner {
     let oriServerPort = 0
 
     // 本地服务 初始化
-    if (localserver && !this.option.ignoreServer) {
+    if (localserver && (!this.option.ignoreServer || !!localserver.entry)) {
       if (this.option.env.port) {
         if (localserver.port) {
           oriServerPort = localserver.port
