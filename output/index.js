@@ -1,5 +1,5 @@
 /*!
- * yyl-server cjs 1.0.3
+ * yyl-server cjs 1.0.4
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */
@@ -624,7 +624,7 @@ class Runner {
         const { localserver, proxy, commit } = this.option.yylConfig;
         let oriServerPort = 0;
         // 本地服务 初始化
-        if (localserver && !this.option.ignoreServer) {
+        if (localserver && (!this.option.ignoreServer || !!localserver.entry)) {
             if (this.option.env.port) {
                 if (localserver.port) {
                     oriServerPort = localserver.port;

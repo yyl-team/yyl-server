@@ -26,98 +26,98 @@
 
 ### constructor
 
-\+ **new Runner**(`op`: [_RunnerOption_](../interfaces/runneroption.md)): [_Runner_](runner.md)
+\+ **new Runner**(`op`: [*RunnerOption*](../interfaces/runneroption.md)): [*Runner*](runner.md)
 
 #### Parameters:
 
-| Name | Type                                            |
-| :--- | :---------------------------------------------- |
-| `op` | [_RunnerOption_](../interfaces/runneroption.md) |
+Name | Type |
+:------ | :------ |
+`op` | [*RunnerOption*](../interfaces/runneroption.md) |
 
-**Returns:** [_Runner_](runner.md)
+**Returns:** [*Runner*](runner.md)
 
-Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L42)
+Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L42)
 
 ## Properties
 
 ### homePage
 
-• **homePage**: _string_= ''
+• **homePage**: *string*= ''
 
 主页
 
-Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L42)
+Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L42)
 
----
+___
 
 ### option
 
-• **option**: _Required_<[_RunnerOption_](../interfaces/runneroption.md)\>
+• **option**: *Required*<[*RunnerOption*](../interfaces/runneroption.md)\>
 
-Defined in: [runner.ts:25](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L25)
+Defined in: [runner.ts:25](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L25)
 
----
+___
 
 ### proxy
 
-• `Optional` **proxy**: [_YProxy_](yproxy.md)
+• `Optional` **proxy**: [*YProxy*](yproxy.md)
 
 反向代理 entance
 
-Defined in: [runner.ts:40](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L40)
+Defined in: [runner.ts:40](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L40)
 
----
+___
 
 ### server
 
-• `Optional` **server**: [_YServer_](yserver.md)
+• `Optional` **server**: [*YServer*](yserver.md)
 
 本地服务 entance
 
-Defined in: [runner.ts:38](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L38)
+Defined in: [runner.ts:38](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L38)
 
 ## Methods
 
 ### abort
 
-▸ **abort**(): _Promise_<void\>
+▸ **abort**(): *Promise*<void\>
 
-**Returns:** _Promise_<void\>
+**Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:178](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L178)
+Defined in: [runner.ts:178](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L178)
 
----
+___
 
 ### livereload
 
-▸ **livereload**(): _Promise_<void\>
+▸ **livereload**(): *Promise*<void\>
 
-**Returns:** _Promise_<void\>
+**Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:189](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L189)
+Defined in: [runner.ts:189](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L189)
 
----
+___
 
 ### start
 
-▸ **start**(): _Promise_<void\>
+▸ **start**(): *Promise*<void\>
 
-**Returns:** _Promise_<void\>
+**Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:167](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L167)
+Defined in: [runner.ts:167](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L167)
 
----
+___
 
 ### clean
 
-▸ `Static`**clean**(`op?`: [_StaticFnOption_](../interfaces/staticfnoption.md)): _Promise_<void\>
+▸ `Static`**clean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
 
 #### Parameters:
 
-| Name  | Type                                                |
-| :---- | :-------------------------------------------------- |
-| `op?` | [_StaticFnOption_](../interfaces/staticfnoption.md) |
+Name | Type |
+:------ | :------ |
+`op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
 
-**Returns:** _Promise_<void\>
+**Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:20](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L20)
+Defined in: [runner.ts:20](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L20)

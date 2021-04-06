@@ -25,96 +25,96 @@
 
 ### constructor
 
-\+ **new YProxy**(`op`: [_YProxyOption_](../interfaces/yproxyoption.md)): [_YProxy_](yproxy.md)
+\+ **new YProxy**(`op`: [*YProxyOption*](../interfaces/yproxyoption.md)): [*YProxy*](yproxy.md)
 
 #### Parameters:
 
-| Name | Type                                            |
-| :--- | :---------------------------------------------- |
-| `op` | [_YProxyOption_](../interfaces/yproxyoption.md) |
+Name | Type |
+:------ | :------ |
+`op` | [*YProxyOption*](../interfaces/yproxyoption.md) |
 
-**Returns:** [_YProxy_](yproxy.md)
+**Returns:** [*YProxy*](yproxy.md)
 
-Defined in: [proxy.ts:88](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L88)
+Defined in: [proxy.ts:88](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L88)
 
 ## Properties
 
 ### config
 
-• **config**: _Required_<ProxyConfig\>
+• **config**: *Required*<ProxyConfig\>
 
-Defined in: [proxy.ts:74](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L74)
+Defined in: [proxy.ts:74](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L74)
 
----
+___
 
 ### log
 
-• **log**: _Logger_<keyof SeedEventName\>
+• **log**: *Logger*<keyof SeedEventName\>
 
 日志输出
 
-Defined in: [proxy.ts:86](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L86)
+Defined in: [proxy.ts:86](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L86)
 
----
+___
 
 ### server
 
-• `Optional` **server**: _ProxyServer_
+• `Optional` **server**: *ProxyServer*
 
-Defined in: [proxy.ts:83](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L83)
+Defined in: [proxy.ts:83](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L83)
 
 ## Methods
 
 ### abort
 
-▸ **abort**(): _Promise_<void\>
+▸ **abort**(): *Promise*<void\>
 
-**Returns:** _Promise_<void\>
+**Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:306](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L306)
+Defined in: [proxy.ts:306](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L306)
 
----
+___
 
 ### start
 
-▸ **start**(): _Promise_<unknown\>
+▸ **start**(): *Promise*<unknown\>
 
-**Returns:** _Promise_<unknown\>
+**Returns:** *Promise*<unknown\>
 
-Defined in: [proxy.ts:121](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L121)
+Defined in: [proxy.ts:121](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L121)
 
----
+___
 
 ### certClean
 
-▸ `Static`**certClean**(`op?`: [_StaticFnOption_](../interfaces/staticfnoption.md)): _Promise_<void\>
+▸ `Static`**certClean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
 
 清理证书
 
 #### Parameters:
 
-| Name  | Type                                                |
-| :---- | :-------------------------------------------------- |
-| `op?` | [_StaticFnOption_](../interfaces/staticfnoption.md) |
+Name | Type |
+:------ | :------ |
+`op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
 
-**Returns:** _Promise_<void\>
+**Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:59](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L59)
+Defined in: [proxy.ts:59](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L59)
 
----
+___
 
 ### clean
 
-▸ `Static`**clean**(`op?`: [_StaticFnOption_](../interfaces/staticfnoption.md)): _Promise_<void\>
+▸ `Static`**clean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
 
 清理缓存
 
 #### Parameters:
 
-| Name  | Type                                                |
-| :---- | :-------------------------------------------------- |
-| `op?` | [_StaticFnOption_](../interfaces/staticfnoption.md) |
+Name | Type |
+:------ | :------ |
+`op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
 
-**Returns:** _Promise_<void\>
+**Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:45](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L45)
+Defined in: [proxy.ts:45](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L45)

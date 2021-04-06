@@ -16,20 +16,20 @@
 
 • `Optional` **config**: ProxyConfig
 
-Defined in: [proxy.ts:29](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L29)
+Defined in: [proxy.ts:29](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L29)
 
----
+___
 
 ### env
 
 • `Optional` **env**: Env
 
-Defined in: [proxy.ts:28](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L28)
+Defined in: [proxy.ts:28](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L28)
 
----
+___
 
 ### logger
 
-• `Optional` **logger**: _Logger_<keyof SeedEventName\>
+• `Optional` **logger**: *Logger*<keyof SeedEventName\>
 
-Defined in: [proxy.ts:30](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L30)
+Defined in: [proxy.ts:30](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L30)

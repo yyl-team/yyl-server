@@ -13,14 +13,14 @@
 
 ### prefix
 
-• **prefix**: _string_
+• **prefix**: *string*
 
-Defined in: [proxy.ts:36](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L36)
+Defined in: [proxy.ts:36](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L36)
 
----
+___
 
 ### result
 
-• **result**: _string_
+• **result**: *string*
 
-Defined in: [proxy.ts:37](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L37)
+Defined in: [proxy.ts:37](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L37)

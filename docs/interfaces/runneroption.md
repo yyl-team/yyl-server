@@ -17,46 +17,46 @@
 
 ### cwd
 
-• `Optional` **cwd**: _string_
+• `Optional` **cwd**: *string*
 
-Defined in: [runner.ts:14](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L14)
+Defined in: [runner.ts:14](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L14)
 
----
+___
 
 ### env
 
 • `Optional` **env**: Env
 
-Defined in: [runner.ts:12](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L12)
+Defined in: [runner.ts:12](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L12)
 
----
+___
 
 ### ignoreServer
 
-• `Optional` **ignoreServer**: _boolean_
+• `Optional` **ignoreServer**: *boolean*
 
-Defined in: [runner.ts:16](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L16)
+Defined in: [runner.ts:16](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L16)
 
----
+___
 
 ### logger
 
-• `Optional` **logger**: _Logger_<keyof SeedEventName\>
+• `Optional` **logger**: *Logger*<keyof SeedEventName\>
 
-Defined in: [runner.ts:13](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L13)
+Defined in: [runner.ts:13](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L13)
 
----
+___
 
 ### serverOption
 
-• `Optional` **serverOption**: [_YServerSetting_](yserversetting.md)
+• `Optional` **serverOption**: [*YServerSetting*](yserversetting.md)
 
-Defined in: [runner.ts:15](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L15)
+Defined in: [runner.ts:15](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L15)
 
----
+___
 
 ### yylConfig
 
 • `Optional` **yylConfig**: YylConfig
 
-Defined in: [runner.ts:11](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/runner.ts#L11)
+Defined in: [runner.ts:11](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/runner.ts#L11)
