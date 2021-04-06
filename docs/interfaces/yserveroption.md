@@ -20,15 +20,15 @@
 
 Defined in: [server.ts:27](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L27)
 
-___
+---
 
 ### cwd
 
-• `Optional` **cwd**: *string*
+• `Optional` **cwd**: _string_
 
 Defined in: [server.ts:24](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L24)
 
-___
+---
 
 ### env
 
@@ -36,18 +36,18 @@ ___
 
 Defined in: [server.ts:26](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L26)
 
-___
+---
 
 ### logger
 
-• `Optional` **logger**: *Logger*<keyof SeedEventName\>
+• `Optional` **logger**: _Logger_<keyof SeedEventName\>
 
 Defined in: [server.ts:25](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L25)
 
-___
+---
 
 ### option
 
-• `Optional` **option**: [*YServerSetting*](yserversetting.md)
+• `Optional` **option**: [_YServerSetting_](yserversetting.md)
 
 Defined in: [server.ts:28](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L28)

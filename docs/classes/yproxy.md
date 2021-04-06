@@ -25,15 +25,15 @@
 
 ### constructor
 
-\+ **new YProxy**(`op`: [*YProxyOption*](../interfaces/yproxyoption.md)): [*YProxy*](yproxy.md)
+\+ **new YProxy**(`op`: [_YProxyOption_](../interfaces/yproxyoption.md)): [_YProxy_](yproxy.md)
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`op` | [*YProxyOption*](../interfaces/yproxyoption.md) |
+| Name | Type                                            |
+| :--- | :---------------------------------------------- |
+| `op` | [_YProxyOption_](../interfaces/yproxyoption.md) |
 
-**Returns:** [*YProxy*](yproxy.md)
+**Returns:** [_YProxy_](yproxy.md)
 
 Defined in: [proxy.ts:88](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L88)
 
@@ -41,25 +41,25 @@ Defined in: [proxy.ts:88](https://github.com/jackness1208/yyl-server/blob/4a70c7
 
 ### config
 
-• **config**: *Required*<ProxyConfig\>
+• **config**: _Required_<ProxyConfig\>
 
 Defined in: [proxy.ts:74](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L74)
 
-___
+---
 
 ### log
 
-• **log**: *Logger*<keyof SeedEventName\>
+• **log**: _Logger_<keyof SeedEventName\>
 
 日志输出
 
 Defined in: [proxy.ts:86](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L86)
 
-___
+---
 
 ### server
 
-• `Optional` **server**: *ProxyServer*
+• `Optional` **server**: _ProxyServer_
 
 Defined in: [proxy.ts:83](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L83)
 
@@ -67,54 +67,54 @@ Defined in: [proxy.ts:83](https://github.com/jackness1208/yyl-server/blob/4a70c7
 
 ### abort
 
-▸ **abort**(): *Promise*<void\>
+▸ **abort**(): _Promise_<void\>
 
-**Returns:** *Promise*<void\>
+**Returns:** _Promise_<void\>
 
 Defined in: [proxy.ts:306](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L306)
 
-___
+---
 
 ### start
 
-▸ **start**(): *Promise*<unknown\>
+▸ **start**(): _Promise_<unknown\>
 
-**Returns:** *Promise*<unknown\>
+**Returns:** _Promise_<unknown\>
 
 Defined in: [proxy.ts:121](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L121)
 
-___
+---
 
 ### certClean
 
-▸ `Static`**certClean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
+▸ `Static`**certClean**(`op?`: [_StaticFnOption_](../interfaces/staticfnoption.md)): _Promise_<void\>
 
 清理证书
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
+| Name  | Type                                                |
+| :---- | :-------------------------------------------------- |
+| `op?` | [_StaticFnOption_](../interfaces/staticfnoption.md) |
 
-**Returns:** *Promise*<void\>
+**Returns:** _Promise_<void\>
 
 Defined in: [proxy.ts:59](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L59)
 
-___
+---
 
 ### clean
 
-▸ `Static`**clean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
+▸ `Static`**clean**(`op?`: [_StaticFnOption_](../interfaces/staticfnoption.md)): _Promise_<void\>
 
 清理缓存
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
+| Name  | Type                                                |
+| :---- | :-------------------------------------------------- |
+| `op?` | [_StaticFnOption_](../interfaces/staticfnoption.md) |
 
-**Returns:** *Promise*<void\>
+**Returns:** _Promise_<void\>
 
 Defined in: [proxy.ts:45](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L45)

@@ -28,6 +28,6 @@
 
 ### YProxyProperty
 
-Ƭ **YProxyProperty**: *Required*<[*YProxyOption*](interfaces/yproxyoption.md)\>
+Ƭ **YProxyProperty**: _Required_<[_YProxyOption_](interfaces/yproxyoption.md)\>
 
 Defined in: [proxy.ts:33](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/proxy.ts#L33)

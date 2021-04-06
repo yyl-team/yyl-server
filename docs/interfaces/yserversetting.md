@@ -13,41 +13,41 @@
 
 ### appDidMount
 
-• `Optional` **appDidMount**: (`app`: *Express*) => *Promise*<any\>
+• `Optional` **appDidMount**: (`app`: _Express_) => _Promise_<any\>
 
 #### Type declaration:
 
-▸ (`app`: *Express*): *Promise*<any\>
+▸ (`app`: _Express_): _Promise_<any\>
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`app` | *Express* |
+| Name  | Type      |
+| :---- | :-------- |
+| `app` | _Express_ |
 
-**Returns:** *Promise*<any\>
-
-Defined in: [server.ts:21](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L21)
+**Returns:** _Promise_<any\>
 
 Defined in: [server.ts:21](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L21)
 
-___
+Defined in: [server.ts:21](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L21)
+
+---
 
 ### appWillMount
 
-• `Optional` **appWillMount**: (`app`: *Express*) => *Promise*<any\>
+• `Optional` **appWillMount**: (`app`: _Express_) => _Promise_<any\>
 
 #### Type declaration:
 
-▸ (`app`: *Express*): *Promise*<any\>
+▸ (`app`: _Express_): _Promise_<any\>
 
 #### Parameters:
 
-Name | Type |
-:------ | :------ |
-`app` | *Express* |
+| Name  | Type      |
+| :---- | :-------- |
+| `app` | _Express_ |
 
-**Returns:** *Promise*<any\>
+**Returns:** _Promise_<any\>
 
 Defined in: [server.ts:20](https://github.com/jackness1208/yyl-server/blob/4a70c7c/src/server.ts#L20)
 
