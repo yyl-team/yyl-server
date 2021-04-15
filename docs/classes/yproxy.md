@@ -35,7 +35,7 @@ Name | Type |
 
 **Returns:** [*YProxy*](yproxy.md)
 
-Defined in: [proxy.ts:88](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L88)
+Defined in: [proxy.ts:88](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L88)
 
 ## Properties
 
@@ -43,7 +43,7 @@ Defined in: [proxy.ts:88](https://github.com/jackness1208/yyl-server/blob/2a2aa3
 
 • **config**: *Required*<ProxyConfig\>
 
-Defined in: [proxy.ts:74](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L74)
+Defined in: [proxy.ts:74](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L74)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 日志输出
 
-Defined in: [proxy.ts:86](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L86)
+Defined in: [proxy.ts:86](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L86)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **server**: *ProxyServer*
 
-Defined in: [proxy.ts:83](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L83)
+Defined in: [proxy.ts:83](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L83)
 
 ## Methods
 
@@ -71,7 +71,7 @@ Defined in: [proxy.ts:83](https://github.com/jackness1208/yyl-server/blob/2a2aa3
 
 **Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:306](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L306)
+Defined in: [proxy.ts:306](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L306)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: [proxy.ts:121](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L121)
+Defined in: [proxy.ts:121](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L121)
 
 ___
 
@@ -99,7 +99,7 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:59](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L59)
+Defined in: [proxy.ts:59](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L59)
 
 ___
 
@@ -117,4 +117,4 @@ Name | Type |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:45](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/proxy.ts#L45)
+Defined in: [proxy.ts:45](https://github.com/jackness1208/yyl-server/blob/6004737/src/proxy.ts#L45)

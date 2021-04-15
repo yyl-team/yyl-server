@@ -4,7 +4,7 @@ const { Runner } = require('../../')
 const { expect } = require('chai')
 const request = require('yyl-request')
 
-const dirname = 'pj-server'
+const dirname = 'pj-server-fn'
 
 describe(`case ${dirname} test`, () => {
   it('usage', async () => {
