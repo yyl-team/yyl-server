@@ -20,6 +20,7 @@ export declare class YServer {
     lrServer?: any;
     /** 日志输出 */
     log: Logger;
+    env: Env;
     cwd: string;
     /** 配置 */
     config: Required<LocalserverConfig>;

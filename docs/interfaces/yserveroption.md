@@ -18,7 +18,7 @@
 
 • `Optional` **config**: LocalserverConfig
 
-Defined in: [server.ts:27](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/server.ts#L27)
+Defined in: [server.ts:27](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L27)
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • `Optional` **cwd**: *string*
 
-Defined in: [server.ts:24](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/server.ts#L24)
+Defined in: [server.ts:24](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L24)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • `Optional` **env**: Env
 
-Defined in: [server.ts:26](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/server.ts#L26)
+Defined in: [server.ts:26](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L26)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • `Optional` **logger**: *Logger*<keyof SeedEventName\>
 
-Defined in: [server.ts:25](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/server.ts#L25)
+Defined in: [server.ts:25](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L25)
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 • `Optional` **option**: [*YServerSetting*](yserversetting.md)
 
-Defined in: [server.ts:28](https://github.com/jackness1208/yyl-server/blob/2a2aa3d/src/server.ts#L28)
+Defined in: [server.ts:28](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L28)

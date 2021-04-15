@@ -1,5 +1,5 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "output/index.js",
   "types": "output/index.d.ts",
   "eslintConfig": {
@@ -38,6 +38,7 @@
     "test": "mocha test/mocha/ --timeout 100000",
     "test:case.base": "mocha test/mocha/case.base.test.js --timeout 100000",
     "test:case.pj-server": "mocha test/mocha/case.pj-server.test.js --timeout 100000",
+    "test:case.pj-server-fn": "mocha test/mocha/case.pj-server-fn.test.js --timeout 100000",
     "test:clean": "mocha test/mocha/clean.test.js --timeout 100000",
     "test:proxy": "mocha test/mocha/proxy.test.js --timeout 100000",
     "test:server": "mocha test/mocha/server.test.js --timeout 100000",
@@ -85,7 +86,7 @@
     "serve-favicon": "2.5.0",
     "serve-index": "1.9.1",
     "serve-static": "1.13.2",
-    "yyl-config-types": "^0.3.19",
+    "yyl-config-types": "^0.4.3",
     "yyl-fs": "0.3.3",
     "yyl-os": "0.11.4",
     "yyl-seed-base": "^0.2.6",

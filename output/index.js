@@ -1,5 +1,5 @@
 /*!
- * yyl-server cjs 1.0.4
+ * yyl-server cjs 1.0.5
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */
@@ -124,6 +124,7 @@ class YServer {
         this.log = (type, args1, args2) => {
             console.log(type, args1, args2);
         };
+        this.env = {};
         this.cwd = process.cwd();
         /** 配置 */
         this.config = {
@@ -133,7 +134,8 @@ class YServer {
             livereload: false,
             serverAddress: `http://${extOs__default['default'].LOCAL_IP}:${DEFAULT_PORT}`,
             mockRoot: path__default['default'].resolve(process.cwd(), 'mock'),
-            entry: ''
+            entry: '',
+            proxies: []
         };
         /** option */
         this.option = {
@@ -147,6 +149,9 @@ class YServer {
         if (config) {
             this.config = Object.assign(this.config, config);
         }
+        if (env) {
+            this.env = env;
+        }
         if (cwd) {
             this.cwd = cwd;
         }
@@ -158,7 +163,12 @@ class YServer {
             this.config.mockRoot = path__default['default'].resolve(this.cwd, config.mockRoot);
         }
         if (config === null || config === void 0 ? void 0 : config.entry) {
-            this.config.entry = path__default['default'].resolve(this.cwd, config.entry);
+            if (typeof (config === null || config === void 0 ? void 0 : config.entry) === 'string') {
+                this.config.entry = path__default['default'].resolve(this.cwd, config.entry);
+            }
+            else {
+                this.config.entry = config.entry;
+            }
         }
         if (env === null || env === void 0 ? void 0 : env.port) {
             this.config.port = env.port;
@@ -174,35 +184,49 @@ class YServer {
     }
     start() {
         return __awaiter(this, void 0, void 0, function* () {
-            const { config, log, option } = this;
+            const { config, log, option, env } = this;
             log('msg', 'info', [LANG.SERVER.START_BEGIN]);
             if (!(yield extOs__default['default'].checkPort(config.port))) {
                 throw new Error(`${LANG.SERVER.PORT_OCCUPIED}: ${chalk__default['default'].yellow(`${config.port}`)}`);
             }
             let app = express__default['default']();
             if (config.entry) {
-                const entryPath = path__default['default'].resolve(config.root, config.entry);
-                if (fs__default['default'].existsSync(entryPath)) {
-                    try {
-                        app = require(entryPath);
+                if (typeof config.entry === 'string') {
+                    // entry 是路径的情况
+                    const entryPath = path__default['default'].resolve(config.root, config.entry);
+                    if (fs__default['default'].existsSync(entryPath)) {
+                        try {
+                            app = require(entryPath);
+                        }
+                        catch (er) {
+                            log('msg', 'error', [`${LANG.SERVER.START_ERROR}: ${chalk__default['default'].yellow(config.entry)}`, er]);
+                            throw er;
+                        }
+                        log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk__default['default'].yellow(config.entry)}`]);
+                        // 兼容 this.server
                     }
-                    catch (er) {
-                        log('msg', 'error', [`${LANG.SERVER.START_ERROR}: ${chalk__default['default'].yellow(config.entry)}`, er]);
-                        throw er;
+                    else {
+                        log('msg', 'error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`]);
                     }
-                    log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk__default['default'].yellow(config.entry)}`]);
-                    if (!app || typeof app.use !== 'function') {
-                        log('msg', 'warn', [`${LANG.SERVER.NOT_EXPORT_APP}: ${chalk__default['default'].yellow(config.entry)}`]);
-                        log('msg', 'success', [LANG.SERVER.START_FINISHED]);
-                        return;
-                    }
-                    if (option && option.appWillMount) {
-                        yield option.appWillMount(app);
-                    }
-                    // 兼容 this.server
                 }
                 else {
-                    log('msg', 'error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`]);
+                    // entry 是函数的情况
+                    try {
+                        app = config.entry({ env });
+                    }
+                    catch (er) {
+                        log('msg', 'error', [`${LANG.SERVER.START_ERROR}`, er]);
+                        throw er;
+                    }
+                    log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}`]);
+                }
+                if (!app || typeof app.use !== 'function') {
+                    log('msg', 'warn', [`${LANG.SERVER.NOT_EXPORT_APP}`]);
+                    log('msg', 'success', [LANG.SERVER.START_FINISHED]);
+                    return;
+                }
+                if (option && option.appWillMount) {
+                    yield option.appWillMount(app);
                 }
             }
             else {

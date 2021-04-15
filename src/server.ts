@@ -40,6 +40,8 @@ export class YServer {
     console.log(type, args1, args2)
   }
 
+  env: Env = {}
+
   cwd: string = process.cwd()
 
   /** 配置 */
@@ -50,7 +52,8 @@ export class YServer {
     livereload: false,
     serverAddress: `http://${extOs.LOCAL_IP}:${DEFAULT_PORT}`,
     mockRoot: path.resolve(process.cwd(), 'mock'),
-    entry: ''
+    entry: '',
+    proxies: []
   }
 
   /** option */
@@ -69,6 +72,10 @@ export class YServer {
       this.config = Object.assign(this.config, config)
     }
 
+    if (env) {
+      this.env = env
+    }
+
     if (cwd) {
       this.cwd = cwd
     }
@@ -82,7 +89,11 @@ export class YServer {
     }
 
     if (config?.entry) {
-      this.config.entry = path.resolve(this.cwd, config.entry)
+      if (typeof config?.entry === 'string') {
+        this.config.entry = path.resolve(this.cwd, config.entry)
+      } else {
+        this.config.entry = config.entry
+      }
     }
 
     if (env?.port) {
@@ -101,7 +112,7 @@ export class YServer {
   }
 
   async start() {
-    const { config, log, option } = this
+    const { config, log, option, env } = this
     log('msg', 'info', [LANG.SERVER.START_BEGIN])
     if (!(await extOs.checkPort(config.port))) {
       throw new Error(`${LANG.SERVER.PORT_OCCUPIED}: ${chalk.yellow(`${config.port}`)}`)
@@ -109,26 +120,39 @@ export class YServer {
 
     let app: Express = express()
     if (config.entry) {
-      const entryPath = path.resolve(config.root, config.entry)
-      if (fs.existsSync(entryPath)) {
+      if (typeof config.entry === 'string') {
+        // entry 是路径的情况
+        const entryPath = path.resolve(config.root, config.entry)
+        if (fs.existsSync(entryPath)) {
+          try {
+            app = require(entryPath)
+          } catch (er) {
+            log('msg', 'error', [`${LANG.SERVER.START_ERROR}: ${chalk.yellow(config.entry)}`, er])
+            throw er
+          }
+          log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk.yellow(config.entry)}`])
+          // 兼容 this.server
+        } else {
+          log('msg', 'error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`])
+        }
+      } else {
+        // entry 是函数的情况
         try {
-          app = require(entryPath)
+          app = config.entry({ env })
         } catch (er) {
-          log('msg', 'error', [`${LANG.SERVER.START_ERROR}: ${chalk.yellow(config.entry)}`, er])
+          log('msg', 'error', [`${LANG.SERVER.START_ERROR}`, er])
           throw er
         }
-        log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}: ${chalk.yellow(config.entry)}`])
-        if (!app || typeof app.use !== 'function') {
-          log('msg', 'warn', [`${LANG.SERVER.NOT_EXPORT_APP}: ${chalk.yellow(config.entry)}`])
-          log('msg', 'success', [LANG.SERVER.START_FINISHED])
-          return
-        }
-        if (option && option.appWillMount) {
-          await option.appWillMount(app)
-        }
-        // 兼容 this.server
-      } else {
-        log('msg', 'error', [`${LANG.SERVER.ENTRY_NOT_EXISTS}: ${config.entry}`])
+        log('msg', 'info', [`${LANG.SERVER.USE_PROJECT_SERVER}`])
+      }
+
+      if (!app || typeof app.use !== 'function') {
+        log('msg', 'warn', [`${LANG.SERVER.NOT_EXPORT_APP}`])
+        log('msg', 'success', [LANG.SERVER.START_FINISHED])
+        return
+      }
+      if (option && option.appWillMount) {
+        await option.appWillMount(app)
       }
     } else {
       log('msg', 'info', [LANG.SERVER.USE_BASE_SERVER])

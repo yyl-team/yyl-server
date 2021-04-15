@@ -1,5 +1,9 @@
 # 版本变更
 
+## 1.0.5 (2021-03-29)
+
+- feat: 兼容 `localserver.entry` 是 function 情况
+
 ## 1.0.4 (2021-03-29)
 
 - feat: 处理 ignoreServer 和 localserver.entry 同时存在情况
