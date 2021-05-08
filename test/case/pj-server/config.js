@@ -26,9 +26,9 @@ const setting = {
   proxy: {
     port: 8887,
     localRemote: {
-      'http://fet.yy.com/': 'http://127.0.0.1:5000/'
+      'http://www.testhost.com/': 'http://127.0.0.1:5000/'
     },
-    homePage: 'http://fet.yy.com/'
+    homePage: 'http://www.testhost.com/'
   }
 }
 // - setting
@@ -96,10 +96,10 @@ const config = {
   commit: {
     type: 'gitlab-ci',
     // 上线配置
-    revAddr: 'http://fet.yy.com/assets/rev/rev-manifest.json',
-    hostname: '//fet.yy.com',
-    staticHost: '//fet.yy.com',
-    mainHost: '//fet.yy.com'
+    revAddr: 'http://www.testhost.com/assets/rev/rev-manifest.json',
+    hostname: '//www.testhost.com',
+    staticHost: '//www.testhost.com',
+    mainHost: '//www.testhost.com'
   }
   // - configCommit
 }
