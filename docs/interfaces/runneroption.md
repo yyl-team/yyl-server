@@ -19,7 +19,7 @@
 
 • `Optional` **cwd**: *string*
 
-Defined in: [runner.ts:14](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L14)
+Defined in: [runner.ts:12](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L12)
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • `Optional` **env**: Env
 
-Defined in: [runner.ts:12](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L12)
+Defined in: [runner.ts:10](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L10)
 
 ___
 
@@ -35,15 +35,15 @@ ___
 
 • `Optional` **ignoreServer**: *boolean*
 
-Defined in: [runner.ts:16](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L16)
+Defined in: [runner.ts:14](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L14)
 
 ___
 
 ### logger
 
-• `Optional` **logger**: *Logger*<keyof SeedEventName\>
+• `Optional` **logger**: *Logger*<keyof LoggerType\>
 
-Defined in: [runner.ts:13](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L13)
+Defined in: [runner.ts:11](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L11)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • `Optional` **serverOption**: [*YServerSetting*](yserversetting.md)
 
-Defined in: [runner.ts:15](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L15)
+Defined in: [runner.ts:13](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L13)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • `Optional` **yylConfig**: YylConfig
 
-Defined in: [runner.ts:11](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L11)
+Defined in: [runner.ts:9](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L9)

@@ -1,5 +1,5 @@
 /*!
- * yyl-server cjs 1.0.5
+ * yyl-server cjs 1.0.6
  * (c) 2020 - 2021 
  * Released under the MIT License.
  */
@@ -251,7 +251,7 @@ class YServer {
                     }
                 });
                 // ico
-                app.use(serveFavicon__default['default'](path__default['default'].join(__dirname, '../resource/favicon.ico')));
+                app.use(serveFavicon__default['default'](path__default['default'].join(__dirname, '../assets/favicon.ico')));
                 // header
                 app.use(serveStatic__default['default'](config.root, {
                     setHeaders: function (res, iPath) {

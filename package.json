@@ -1,5 +1,5 @@
 {
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "output/index.js",
   "types": "output/index.d.ts",
   "eslintConfig": {
@@ -28,12 +28,12 @@
   "scripts": {
     "bootstrap": "yarn install & npm run prettier",
     "eslint": "eslint --ext=jsx,ts,tsx ./",
-    "prettier": "prettier --write ./**",
+    "prettier": "prettier --write -c ./src ./test",
     "dev": "rollup --config ./rollup.config.js",
     "d": "rollup --config ./rollup.config.js",
     "build": "cross-env NODE_ENV=production rollup --config ./rollup.config.js",
     "w": "rollup --watch --config ./rollup.config.js",
-    "prepublishOnly": "npm run prettier & npm run build & npm run doc",
+    "prepublishOnly": "npm run prettier && npm run build && npm run doc",
     "doc": "typedoc src/index.ts --plugin typedoc-plugin-markdown",
     "test": "mocha test/mocha/ --timeout 100000",
     "test:case.base": "mocha test/mocha/case.base.test.js --timeout 100000",
@@ -86,10 +86,9 @@
     "serve-favicon": "2.5.0",
     "serve-index": "1.9.1",
     "serve-static": "1.13.2",
-    "yyl-config-types": "^0.4.3",
+    "yyl-config-types": "^0.5.2",
     "yyl-fs": "0.3.3",
-    "yyl-os": "0.11.4",
-    "yyl-seed-base": "^0.2.6",
+    "yyl-os": "0.14.1",
     "yyl-seed-response": "^0.2.0",
     "yyl-util": "^2.3.9"
   },

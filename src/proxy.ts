@@ -7,8 +7,7 @@ import extFs from 'yyl-fs'
 import { URL } from 'url'
 import AnyProxy, { ProxyOptions, ProxyServer } from 'anyproxy'
 import request from 'request'
-import { ProxyConfig, Env } from 'yyl-config-types'
-import { Logger } from 'yyl-seed-base'
+import { ProxyConfig, Env, Logger } from 'yyl-config-types'
 
 import { LANG, PROXY_CACHE_PATH, PROXY_CRET_PATH } from './const'
 

@@ -7,14 +7,13 @@ import serveFavicon from 'serve-favicon'
 import serveStatic from 'serve-static'
 import livereload from 'connect-livereload'
 
-import { Env, LocalserverConfig } from 'yyl-config-types'
+import { Env, LocalserverConfig, Logger } from 'yyl-config-types'
 import rp from 'request-promise'
 import { URL } from 'url'
 import fs from 'fs'
 import http from 'http'
 import express, { Express } from 'express'
 import { LANG } from './const'
-import { Logger } from 'yyl-seed-base'
 
 export interface YServerSetting {
   appWillMount?: (app: Express) => Promise<any>
@@ -176,7 +175,7 @@ export class YServer {
       })
 
       // ico
-      app.use(serveFavicon(path.join(__dirname, '../resource/favicon.ico')))
+      app.use(serveFavicon(path.join(__dirname, '../assets/favicon.ico')))
 
       // header
       app.use(
