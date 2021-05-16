@@ -1,13 +1,14 @@
 **/js/lib/**
-resource/
 .rpt2_cache
+docs/
+assets/
 dist/**
 **/dist/**
 output/**
 node_modules/**
 *.yml
+*.ico
 .gitignore
-.prettierignore
 yarn.lock
 .npmignore
 .**/*.map
@@ -21,7 +22,6 @@ package-lock.json
 **/*.pug
 **/*.sh
 **/*.conf
-**/*.ico
 **/__frag/*
 .log
 **/*.log

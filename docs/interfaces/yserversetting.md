@@ -15,21 +15,21 @@
 
 • `Optional` **appDidMount**: (`app`: *Express*) => *Promise*<any\>
 
-#### Type declaration:
+#### Type declaration
 
 ▸ (`app`: *Express*): *Promise*<any\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`app` | *Express* |
+| Name | Type |
+| :------ | :------ |
+| `app` | *Express* |
 
 **Returns:** *Promise*<any\>
 
-Defined in: [server.ts:21](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L21)
+Defined in: [server.ts:20](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L20)
 
-Defined in: [server.ts:21](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L21)
+Defined in: [server.ts:20](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L20)
 
 ___
 
@@ -37,18 +37,18 @@ ___
 
 • `Optional` **appWillMount**: (`app`: *Express*) => *Promise*<any\>
 
-#### Type declaration:
+#### Type declaration
 
 ▸ (`app`: *Express*): *Promise*<any\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`app` | *Express* |
+| Name | Type |
+| :------ | :------ |
+| `app` | *Express* |
 
 **Returns:** *Promise*<any\>
 
-Defined in: [server.ts:20](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L20)
+Defined in: [server.ts:19](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L19)
 
-Defined in: [server.ts:20](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L20)
+Defined in: [server.ts:19](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L19)

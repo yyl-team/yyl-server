@@ -28,15 +28,15 @@
 
 \+ **new Runner**(`op`: [*RunnerOption*](../interfaces/runneroption.md)): [*Runner*](runner.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`op` | [*RunnerOption*](../interfaces/runneroption.md) |
+| Name | Type |
+| :------ | :------ |
+| `op` | [*RunnerOption*](../interfaces/runneroption.md) |
 
 **Returns:** [*Runner*](runner.md)
 
-Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L42)
+Defined in: [runner.ts:40](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L40)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/60047
 
 主页
 
-Defined in: [runner.ts:42](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L42)
+Defined in: [runner.ts:40](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L40)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **option**: *Required*<[*RunnerOption*](../interfaces/runneroption.md)\>
 
-Defined in: [runner.ts:25](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L25)
+Defined in: [runner.ts:23](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L23)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 反向代理 entance
 
-Defined in: [runner.ts:40](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L40)
+Defined in: [runner.ts:38](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L38)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 本地服务 entance
 
-Defined in: [runner.ts:38](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L38)
+Defined in: [runner.ts:36](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L36)
 
 ## Methods
 
@@ -84,7 +84,7 @@ Defined in: [runner.ts:38](https://github.com/jackness1208/yyl-server/blob/60047
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:178](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L178)
+Defined in: [runner.ts:176](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L176)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:189](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L189)
+Defined in: [runner.ts:187](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L187)
 
 ___
 
@@ -104,20 +104,20 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:167](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L167)
+Defined in: [runner.ts:165](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L165)
 
 ___
 
 ### clean
 
-▸ `Static`**clean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
+▸ `Static` **clean**(`op?`: [*StaticFnOption*](../interfaces/staticfnoption.md)): *Promise*<void\>
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
+| Name | Type |
+| :------ | :------ |
+| `op?` | [*StaticFnOption*](../interfaces/staticfnoption.md) |
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:20](https://github.com/jackness1208/yyl-server/blob/6004737/src/runner.ts#L20)
+Defined in: [runner.ts:18](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L18)

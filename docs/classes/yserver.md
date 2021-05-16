@@ -31,15 +31,15 @@
 
 \+ **new YServer**(`op`: [*YServerOption*](../interfaces/yserveroption.md)): [*YServer*](yserver.md)
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`op` | [*YServerOption*](../interfaces/yserveroption.md) |
+| Name | Type |
+| :------ | :------ |
+| `op` | [*YServerOption*](../interfaces/yserveroption.md) |
 
 **Returns:** [*YServer*](yserver.md)
 
-Defined in: [server.ts:63](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L63)
+Defined in: [server.ts:62](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L62)
 
 ## Properties
 
@@ -47,7 +47,7 @@ Defined in: [server.ts:63](https://github.com/jackness1208/yyl-server/blob/60047
 
 • `Optional` **app**: *Express*
 
-Defined in: [server.ts:34](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L34)
+Defined in: [server.ts:33](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L33)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 配置
 
-Defined in: [server.ts:48](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L48)
+Defined in: [server.ts:47](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L47)
 
 ___
 
@@ -65,25 +65,25 @@ ___
 
 • **cwd**: *string*
 
-Defined in: [server.ts:45](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L45)
+Defined in: [server.ts:44](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L44)
 
 ___
 
 ### env
 
-• **env**: Env
+• **env**: Env= {}
 
-Defined in: [server.ts:43](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L43)
+Defined in: [server.ts:42](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L42)
 
 ___
 
 ### log
 
-• **log**: *Logger*<keyof SeedEventName\>
+• **log**: *Logger*<keyof LoggerType\>
 
 日志输出
 
-Defined in: [server.ts:39](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L39)
+Defined in: [server.ts:38](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L38)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **lrServer**: *any*
 
-Defined in: [server.ts:36](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L36)
+Defined in: [server.ts:35](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L35)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 option
 
-Defined in: [server.ts:60](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L60)
+Defined in: [server.ts:59](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L59)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 • `Optional` **server**: *Server*
 
-Defined in: [server.ts:35](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L35)
+Defined in: [server.ts:34](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L34)
 
 ## Methods
 
@@ -119,7 +119,7 @@ Defined in: [server.ts:35](https://github.com/jackness1208/yyl-server/blob/60047
 
 **Returns:** *Promise*<void\>
 
-Defined in: [server.ts:246](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L246)
+Defined in: [server.ts:245](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L245)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [server.ts:263](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L263)
+Defined in: [server.ts:262](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L262)
 
 ___
 
@@ -139,4 +139,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [server.ts:114](https://github.com/jackness1208/yyl-server/blob/6004737/src/server.ts#L114)
+Defined in: [server.ts:113](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L113)

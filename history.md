@@ -1,5 +1,11 @@
 # 版本变更
 
+## 1.0.6 (2021-05-16)
+
+- feat: 更新 `yyl-config-types@0.5.2`
+- feat: 更新 `yyl-seed-base@0.4.1`
+- feat: 更新 `yyl-os@0.14.1`
+
 ## 1.0.5 (2021-03-29)
 
 - feat: 兼容 `localserver.entry` 是 function 情况

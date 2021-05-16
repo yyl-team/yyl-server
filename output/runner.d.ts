@@ -1,7 +1,6 @@
-import { Env, YylConfig } from 'yyl-config-types';
+import { Env, YylConfig, Logger } from 'yyl-config-types';
 import { YServer, YServerSetting } from './server';
 import { YProxy, StaticFnOption } from './proxy';
-import { Logger } from 'yyl-seed-base';
 export interface RunnerOption {
     yylConfig?: YylConfig;
     env?: Env;

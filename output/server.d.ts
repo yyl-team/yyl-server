@@ -1,8 +1,7 @@
 /// <reference types="node" />
-import { Env, LocalserverConfig } from 'yyl-config-types';
+import { Env, LocalserverConfig, Logger } from 'yyl-config-types';
 import http from 'http';
 import { Express } from 'express';
-import { Logger } from 'yyl-seed-base';
 export interface YServerSetting {
     appWillMount?: (app: Express) => Promise<any>;
     appDidMount?: (app: Express) => Promise<any>;
