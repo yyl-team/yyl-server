@@ -14,4 +14,4 @@
 
 • `Optional` **logger**: *Logger*<keyof LoggerType\>
 
-Defined in: [proxy.ts:40](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L40)
+Defined in: [proxy.ts:40](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L40)

@@ -35,7 +35,7 @@
 
 **Returns:** [*YProxy*](yproxy.md)
 
-Defined in: [proxy.ts:87](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L87)
+Defined in: [proxy.ts:87](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L87)
 
 ## Properties
 
@@ -43,7 +43,7 @@ Defined in: [proxy.ts:87](https://github.com/yyl-team/yyl-server/blob/036ab4d/sr
 
 • **config**: *Required*<ProxyConfig\>
 
-Defined in: [proxy.ts:73](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L73)
+Defined in: [proxy.ts:73](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L73)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 日志输出
 
-Defined in: [proxy.ts:85](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L85)
+Defined in: [proxy.ts:85](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L85)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • `Optional` **server**: *ProxyServer*
 
-Defined in: [proxy.ts:82](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L82)
+Defined in: [proxy.ts:82](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L82)
 
 ## Methods
 
@@ -71,7 +71,7 @@ Defined in: [proxy.ts:82](https://github.com/yyl-team/yyl-server/blob/036ab4d/sr
 
 **Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:305](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L305)
+Defined in: [proxy.ts:305](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L305)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 **Returns:** *Promise*<unknown\>
 
-Defined in: [proxy.ts:120](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L120)
+Defined in: [proxy.ts:120](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L120)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:58](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L58)
+Defined in: [proxy.ts:58](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L58)
 
 ___
 
@@ -117,4 +117,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [proxy.ts:44](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L44)
+Defined in: [proxy.ts:44](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L44)

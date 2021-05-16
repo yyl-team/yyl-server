@@ -27,9 +27,9 @@
 
 **Returns:** *Promise*<any\>
 
-Defined in: [server.ts:20](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L20)
+Defined in: [server.ts:20](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L20)
 
-Defined in: [server.ts:20](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L20)
+Defined in: [server.ts:20](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L20)
 
 ___
 
@@ -49,6 +49,6 @@ ___
 
 **Returns:** *Promise*<any\>
 
-Defined in: [server.ts:19](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L19)
+Defined in: [server.ts:19](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L19)
 
-Defined in: [server.ts:19](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L19)
+Defined in: [server.ts:19](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L19)
