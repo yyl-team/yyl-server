@@ -39,7 +39,7 @@
 
 **Returns:** [*YServer*](yserver.md)
 
-Defined in: [server.ts:62](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L62)
+Defined in: [server.ts:62](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L62)
 
 ## Properties
 
@@ -47,7 +47,7 @@ Defined in: [server.ts:62](https://github.com/yyl-team/yyl-server/blob/036ab4d/s
 
 • `Optional` **app**: *Express*
 
-Defined in: [server.ts:33](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L33)
+Defined in: [server.ts:33](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L33)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 配置
 
-Defined in: [server.ts:47](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L47)
+Defined in: [server.ts:47](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L47)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **cwd**: *string*
 
-Defined in: [server.ts:44](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L44)
+Defined in: [server.ts:44](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L44)
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **env**: Env= {}
 
-Defined in: [server.ts:42](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L42)
+Defined in: [server.ts:42](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L42)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 日志输出
 
-Defined in: [server.ts:38](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L38)
+Defined in: [server.ts:38](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L38)
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • `Optional` **lrServer**: *any*
 
-Defined in: [server.ts:35](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L35)
+Defined in: [server.ts:35](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L35)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 option
 
-Defined in: [server.ts:59](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L59)
+Defined in: [server.ts:59](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L59)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 • `Optional` **server**: *Server*
 
-Defined in: [server.ts:34](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L34)
+Defined in: [server.ts:34](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L34)
 
 ## Methods
 
@@ -119,7 +119,7 @@ Defined in: [server.ts:34](https://github.com/yyl-team/yyl-server/blob/036ab4d/s
 
 **Returns:** *Promise*<void\>
 
-Defined in: [server.ts:245](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L245)
+Defined in: [server.ts:245](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L245)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [server.ts:262](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L262)
+Defined in: [server.ts:262](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L262)
 
 ___
 
@@ -139,4 +139,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [server.ts:113](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/server.ts#L113)
+Defined in: [server.ts:113](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/server.ts#L113)

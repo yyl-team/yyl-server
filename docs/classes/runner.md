@@ -36,7 +36,7 @@
 
 **Returns:** [*Runner*](runner.md)
 
-Defined in: [runner.ts:40](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L40)
+Defined in: [runner.ts:40](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L40)
 
 ## Properties
 
@@ -46,7 +46,7 @@ Defined in: [runner.ts:40](https://github.com/yyl-team/yyl-server/blob/036ab4d/s
 
 主页
 
-Defined in: [runner.ts:40](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L40)
+Defined in: [runner.ts:40](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L40)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **option**: *Required*<[*RunnerOption*](../interfaces/runneroption.md)\>
 
-Defined in: [runner.ts:23](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L23)
+Defined in: [runner.ts:23](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L23)
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 反向代理 entance
 
-Defined in: [runner.ts:38](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L38)
+Defined in: [runner.ts:38](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L38)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 本地服务 entance
 
-Defined in: [runner.ts:36](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L36)
+Defined in: [runner.ts:36](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L36)
 
 ## Methods
 
@@ -84,7 +84,7 @@ Defined in: [runner.ts:36](https://github.com/yyl-team/yyl-server/blob/036ab4d/s
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:176](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L176)
+Defined in: [runner.ts:176](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L176)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:187](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L187)
+Defined in: [runner.ts:187](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L187)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:165](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L165)
+Defined in: [runner.ts:165](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L165)
 
 ___
 
@@ -120,4 +120,4 @@ ___
 
 **Returns:** *Promise*<void\>
 
-Defined in: [runner.ts:18](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/runner.ts#L18)
+Defined in: [runner.ts:18](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/runner.ts#L18)

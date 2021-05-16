@@ -16,7 +16,7 @@
 
 • `Optional` **config**: ProxyConfig
 
-Defined in: [proxy.ts:28](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L28)
+Defined in: [proxy.ts:28](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L28)
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • `Optional` **env**: Env
 
-Defined in: [proxy.ts:27](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L27)
+Defined in: [proxy.ts:27](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L27)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • `Optional` **logger**: *Logger*<keyof LoggerType\>
 
-Defined in: [proxy.ts:29](https://github.com/yyl-team/yyl-server/blob/036ab4d/src/proxy.ts#L29)
+Defined in: [proxy.ts:29](https://github.com/yyl-team/yyl-server/blob/b7b1b5d/src/proxy.ts#L29)
